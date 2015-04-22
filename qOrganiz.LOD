@@ -1,0 +1,1725 @@
+z1000-Zeidon    QORGANIZ TZZOLODO 04/10/15   21:42:11 1.0a2    
+eLOD       1
+aZKey      1658404
+aName      qOrganiz
+aDesc      Query Organization (used for logon and existence checking)
+aDLL_Name  qOrganiz
+
+eLOD_EntityParent 2
+aName      Organization
+aIndentName Organization
+aIndentLvl 0
+aZKey      1658405
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      N
+aParentDeleteBehave E
+aDupEntityInstance N
+aDupRelationshipInstance N
+
+eLOD_EntityChild 3
+aName      PrimaryRegistrant
+aIndentName    PrimaryRegistrant
+aIndentLvl 3
+aZKey      1658410
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      N
+aParentDeleteBehave R
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator L
+
+eLOD_AttributeRec 4
+aZKey      1658411
+
+eER_AttributeRec 5
+aName      ID
+aZKey      68568364
+aNotNull   Y
+aDesc      Generated ID
+
+eDomainRec 6
+aZKey      68568083
+aName      Integer
+aDomainType E
+aDataType  L
+aMaxStringLth 4
+aDecimalFormat 0
+aDesc      Integer numbers from -lots to +lots
+aContextRestriction N
+
+eLOD_AttributeRec 4
+aZKey      1658412
+
+eER_AttributeRec 5
+aName      EPA_CompanyNumber
+aZKey      1654858
+aLth       6
+aDesc      1-6 digit number assigned to the company by the EPA (e.g. 10324 for MASON, 47371 for LONZA, 1839 for STEPAN)
+
+eDomainRec 6
+aZKey      18568062
+aName      NumericId
+aDomainType F
+aDataType  S
+aMaxStringLth 32
+aDesc      Numeric Text (0-9).
+aContextRestriction N
+
+eER_EntityRec 4
+aName      PrimaryRegistrant
+aZKey      68568354
+aPurpose   F
+aER_DiagramPosX 40
+aER_DiagramPosY 38
+
+eER_RelLinkRec 4
+aName      has
+aAutoSeq   N
+aHangingForeignKeyEntity N
+aZKey      1653218
+aCardMin   0
+aCardMax   1
+aTE_NoForeignKeyPrefix N
+
+eER_RelTypeRec 5
+aZKey      1653217
+aFact      Added thru ER Dialog
+aER_DiagramBendPosX 0
+aER_DiagramBendPosY 0
+aER_DiagramE1PosX 65
+aER_DiagramE1PosY 41
+aER_DiagramE2PosX 49
+aER_DiagramE2PosY 41
+
+eLOD_EntityChild 3
+aName      Subregistrant
+aIndentName    Subregistrant
+aIndentLvl 3
+aZKey      1658415
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      N
+aParentDeleteBehave R
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator L
+
+eLOD_EntityChild 4
+aName      PrimarySub
+aIndentName       PrimarySub
+aIndentLvl 6
+aZKey      110004428
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aParentDeleteBehave R
+aRelLinkIndicator L
+aDesc      Used to carry intersection data between Primary and Subregistrants
+
+eLOD_EntityChild 5
+aName      RelatedPrimaryRegistrant
+aIndentName          RelatedPrimaryRegistrant
+aIndentLvl 9
+aZKey      110004430
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aParentDeleteBehave R
+aRelLinkIndicator H
+
+eLOD_EntityChild 6
+aName      PrimaryOrganization
+aIndentName             PrimaryOrganization
+aIndentLvl 12
+aZKey      110004438
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aParentDeleteBehave R
+aRelLinkIndicator H
+
+eLOD_AttributeRec 7
+aZKey      110004439
+
+eER_AttributeRec 8
+aName      ID
+aZKey      1653223
+aNotNull   Y
+aDesc      Generated ID
+aCaseSens  Y
+
+eDomainRec 9
+
+eLOD_AttributeRec 7
+aZKey      110004440
+
+eER_AttributeRec 8
+aName      Name
+aZKey      1653225
+aNotNull   Y
+aDesc      e.g. MASON Chemical Company or Lonza Inc. or Stepan Company
+aCaseSens  Y
+
+eDomainRec 9
+aZKey      68568081
+aName      Text
+aDomainType E
+aDataType  S
+aMaxStringLth 254
+aDesc      Any Character String
+aContextRestriction N
+
+eER_EntityRec 7
+aName      Organization
+aZKey      1653216
+aPurpose   F
+aER_DiagramPosX 66
+aER_DiagramPosY 37
+
+eER_RelLinkRec 7
+aName      for
+aAutoSeq   N
+aHangingForeignKeyEntity N
+aZKey      1653219
+aCardMin   1
+aCardMax   1
+aTE_NoForeignKeyPrefix N
+
+eER_RelTypeRec 8
+
+eLOD_AttributeRec 6
+aZKey      110004431
+
+eER_AttributeRec 7
+
+eDomainRec 8
+
+eLOD_AttributeRec 6
+aZKey      110004432
+
+eER_AttributeRec 7
+
+eDomainRec 8
+
+eER_EntityRec 6
+
+eER_RelLinkRec 6
+aName      for
+aZKey      68568359
+aCardMin   1
+aCardMax   1
+
+eER_RelTypeRec 7
+aZKey      68568357
+aFact      Added thru ER Dialog
+aER_DiagramBendPosX 44
+aER_DiagramBendPosY 19
+aER_DiagramE1PosX 44
+aER_DiagramE1PosY 37
+aER_DiagramE2PosX 67
+aER_DiagramE2PosY 19
+
+eLOD_AttributeRec 5
+aZKey      110004429
+
+eER_AttributeRec 6
+aName      ID
+aZKey      68568365
+aNotNull   Y
+aDesc      Generated ID
+
+eDomainRec 7
+
+eER_EntityRec 5
+aName      PrimarySub
+aZKey      68568356
+aPurpose   S
+aDesc      Used to carry intersection data between Primary and Subregistrants
+aER_DiagramPosX 68
+aER_DiagramPosY 17
+
+eER_RelLinkRec 5
+aName      has
+aZKey      68568361
+aCardMin   0
+aCardMax   m
+
+eER_RelTypeRec 6
+aZKey      68568360
+aFact      Added thru ER Dialog
+aER_DiagramBendPosX 101
+aER_DiagramBendPosY 19
+aER_DiagramE1PosX 101
+aER_DiagramE1PosY 36
+aER_DiagramE2PosX 77
+aER_DiagramE2PosY 19
+
+eLOD_AttributeRec 4
+aZKey      1658416
+
+eER_AttributeRec 5
+aName      ID
+aZKey      68568366
+aNotNull   Y
+aDesc      Generated ID
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658417
+
+eER_AttributeRec 5
+aName      EPA_CompanyNumber
+aZKey      1654859
+aLth       6
+aDesc      1-6 digit number assigned to the company by the EPA (e.g. 10324 for MASON, 47371 for LONZA, 1839 for STEPAN)
+
+eDomainRec 6
+
+eER_EntityRec 4
+aName      Subregistrant
+aZKey      68568355
+aPurpose   F
+aER_DiagramPosX 97
+aER_DiagramPosY 37
+
+eER_RelLinkRec 4
+aName      has
+aAutoSeq   N
+aHangingForeignKeyEntity N
+aZKey      1653221
+aCardMin   0
+aCardMax   1
+aTE_NoForeignKeyPrefix N
+
+eER_RelTypeRec 5
+aZKey      1653220
+aFact      Added thru ER Dialog
+aER_DiagramBendPosX 0
+aER_DiagramBendPosY 0
+aER_DiagramE1PosX 75
+aER_DiagramE1PosY 39
+aER_DiagramE2PosX 96
+aER_DiagramE2PosY 39
+
+eLOD_EntityChild 3
+aName      Person
+aIndentName    Person
+aIndentLvl 3
+aZKey      1658421
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aWork      N
+aParentDeleteBehave R
+aDupEntityInstance N
+aDupRelationshipInstance N
+aRelLinkIndicator H
+
+eLOD_EntityChild 4
+aName      User
+aIndentName       User
+aIndentLvl 6
+aZKey      1658440
+aCreate    N
+aDelete    N
+aUpdate    N
+aInclude   N
+aInclSrc   Y
+aExclude   N
+aRecursive N
+aDerived   N
+aParentDeleteBehave R
+aRelLinkIndicator H
+aDesc      user of the system
+
+eLOD_AttributeRec 5
+aZKey      1658441
+
+eER_AttributeRec 6
+aName      ID
+aZKey      68568570
+aNotNull   Y
+aDesc      system generated user id
+aCaseSens  Y
+
+eDomainRec 7
+
+eLOD_AttributeRec 5
+aZKey      1658442
+
+eER_AttributeRec 6
+aName      UserName
+aZKey      68568571
+aNotNull   Y
+aDesc      user's logon name
+
+eDomainRec 7
+aZKey      110002352
+aName      GeneralNameCaseInsensitive
+aDomainType E
+aDataType  S
+aMaxStringLth 128
+aDesc      Case Insensitive General Text (names, streets, cities, etc.)
+aContextRestriction N
+
+eLOD_AttributeRec 5
+aZKey      1658443
+
+eER_AttributeRec 6
+aName      UserPassword
+aZKey      68568572
+aDesc      users logon password
+aCaseSens  Y
+
+eDomainRec 7
+aZKey      68568077
+aName      Password
+aDomainType A
+aDataType  S
+aMaxStringLth 128
+aContextRestriction N
+
+eLOD_AttributeRec 5
+aZKey      1658445
+
+eER_AttributeRec 6
+aName      EmailAddress
+aZKey      68568574
+
+eDomainRec 7
+
+eLOD_AttributeRec 5
+aZKey      1658447
+
+eER_AttributeRec 6
+aName      Active
+aZKey      68568576
+aDesc      is this user currently active(Y) or inactive(N)
+aCaseSens  Y
+
+eDomainRec 7
+aZKey      68567482
+aName      Y/N
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aDesc      Yes or No
+aContextRestriction N
+
+eLOD_AttributeRec 5
+aZKey      1658448
+
+eER_AttributeRec 6
+aName      Status
+aZKey      68568577
+aCaseSens  Y
+
+eDomainRec 7
+aZKey      1164066
+aName      ExperienceLevel
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aDesc      Beginner, Intermediate, Expert
+aContextRestriction N
+
+eLOD_AttributeRec 5
+aZKey      1658449
+
+eER_AttributeRec 6
+aName      Note
+aZKey      68568578
+aDesc      General Note
+aCaseSens  Y
+
+eDomainRec 7
+aZKey      68568051
+aName      Note
+aDomainType A
+aDataType  S
+aMaxStringLth 32000
+aContextRestriction N
+
+eLOD_AttributeRec 5
+aZKey      1658450
+
+eER_AttributeRec 6
+aName      LastLoginDateTime
+aZKey      68568579
+aCaseSens  Y
+
+eDomainRec 7
+aZKey      68568141
+aName      DateTime
+aDomainType A
+aDataType  T
+aMaxStringLth 20
+aDesc      Basic Timestamp Domain
+aContextRestriction N
+
+eLOD_AttributeRec 5
+aZKey      1658451
+
+eER_AttributeRec 6
+aName      CreatedDateTime
+aZKey      68568580
+aDesc      date and time the activity was created in the sytem
+aCaseSens  Y
+
+eDomainRec 7
+
+eLOD_AttributeRec 5
+aZKey      1658452
+
+eER_AttributeRec 6
+aName      ModifiedDateTime
+aZKey      68568581
+aDesc      date this record was modified
+aCaseSens  Y
+
+eDomainRec 7
+
+eLOD_AttributeRec 5
+aZKey      1658453
+
+eER_AttributeRec 6
+aName      CreatedBy
+aZKey      68568582
+aDesc      32
+user that created this record
+ 
+aCaseSens  Y
+
+eDomainRec 7
+aZKey      68568065
+aName      GeneralName_Address
+aDomainType E
+aDataType  S
+aMaxStringLth 128
+aDesc      General Text (names, streets, cities, etc.)
+aContextRestriction N
+
+eLOD_AttributeRec 5
+aZKey      1658454
+
+eER_AttributeRec 6
+aName      LastModifiedBy
+aZKey      68568583
+aCaseSens  Y
+
+eDomainRec 7
+
+eER_EntityRec 5
+aName      User
+aZKey      68568569
+aPurpose   F
+aDesc      user of the system
+aER_DiagramPosX 108
+aER_DiagramPosY 23
+
+eER_RelLinkRec 5
+aName      for
+aAutoSeq   N
+aHangingForeignKeyEntity N
+aZKey      68568857
+aCardMin   0
+aCardMax   1
+aTE_NoForeignKeyPrefix N
+
+eER_RelTypeRec 6
+aZKey      68568855
+aFact      Added thru ER Dialog
+aER_DiagramBendPosX 0
+aER_DiagramBendPosY 0
+aER_DiagramE1PosX 107
+aER_DiagramE1PosY 25
+aER_DiagramE2PosX 91
+aER_DiagramE2PosY 25
+
+eLOD_AttributeRec 4
+aZKey      1658422
+
+eER_AttributeRec 5
+aName      ID
+aZKey      68568420
+aNotNull   Y
+aDesc      system generated id
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658423
+
+eER_AttributeRec 5
+aName      LastName
+aZKey      68568421
+aDesc      Contact's last Name
+aCaseSens  Y
+
+eDomainRec 6
+aZKey      68568045
+aName      LastName
+aDomainType E
+aDataType  S
+aMaxStringLth 64
+aDesc      Person's Last Name
+aContextRestriction N
+
+eLOD_AttributeRec 4
+aZKey      1658424
+
+eER_AttributeRec 5
+aName      FirstName
+aZKey      68568422
+aDesc      Contact first Name
+aCaseSens  Y
+
+eDomainRec 6
+aZKey      68568043
+aName      FirstName
+aDomainType E
+aDataType  S
+aMaxStringLth 64
+aDesc      Person's First Name
+aContextRestriction N
+
+eLOD_AttributeRec 4
+aZKey      1658425
+
+eER_AttributeRec 5
+aName      MiddleName
+aZKey      68568423
+aDesc      Contact middle name or initial
+aCaseSens  Y
+
+eDomainRec 6
+aZKey      68568041
+aName      MiddleName
+aDomainType E
+aDataType  S
+aMaxStringLth 64
+aDesc      Person's middle name or initial
+aContextRestriction N
+
+eLOD_AttributeRec 4
+aZKey      1658426
+
+eER_AttributeRec 5
+aName      Suffix
+aZKey      68568424
+aDesc      suffix (Jr. III etc.)
+aCaseSens  Y
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658427
+
+eER_AttributeRec 5
+aName      Gender
+aZKey      68568430
+aDesc      Gender (M/F) 
+
+eDomainRec 6
+aZKey      68568058
+aName      Gender
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aDesc      (Male/Female)
+aContextRestriction N
+
+eLOD_AttributeRec 4
+aZKey      1658428
+
+eER_AttributeRec 5
+aName      HomePhone
+aZKey      68568434
+aDesc      Direct phone number
+
+eDomainRec 6
+aZKey      68568062
+aName      PhoneNumber
+aDomainType F
+aDataType  S
+aMaxStringLth 11
+aDesc      Any phone number.  Requires flexible format for foreign numbers.
+aContextRestriction N
+
+eLOD_AttributeRec 4
+aZKey      1658429
+
+eER_AttributeRec 5
+aName      MobilePhone
+aZKey      68568437
+aDesc      cell or mobil phone
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658430
+
+eER_AttributeRec 5
+aName      WorkPhone
+aZKey      68568435
+aDesc      Alternate Phone Number
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658431
+
+eER_AttributeRec 5
+aName      WorkPhoneExtension
+aZKey      68568438
+aLth       30
+aDesc      phone extension
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658432
+
+eER_AttributeRec 5
+aName      Fax
+aZKey      68568436
+aDesc      fax phone number
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658433
+
+eER_AttributeRec 5
+aName      EmailAddress
+aZKey      68568439
+aDesc      email address
+
+eDomainRec 6
+aZKey      68568053
+aName      EMailAddress
+aDomainType E
+aDataType  S
+aMaxStringLth 128
+aContextRestriction N
+
+eLOD_AttributeRec 4
+aZKey      1658434
+
+eER_AttributeRec 5
+aName      Title
+aZKey      68568441
+aDesc      job title
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658435
+
+eER_AttributeRec 5
+aName      Note
+aZKey      68568447
+aDesc      overview note
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658436
+
+eER_AttributeRec 5
+aName      CreatedDateTime
+aZKey      68568454
+aDesc      date and time the activity was created in the sytem
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658437
+
+eER_AttributeRec 5
+aName      ModifiedDateTime
+aZKey      68568455
+aDesc      date this record was modified
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658438
+
+eER_AttributeRec 5
+aName      CreatedBy
+aZKey      68568456
+aDesc      32
+user that created this record
+ 
+
+eDomainRec 6
+
+eLOD_AttributeRec 4
+aZKey      1658439
+
+eER_AttributeRec 5
+aName      LastModifiedBy
+aZKey      68568457
+
+eDomainRec 6
+
+eER_EntityRec 4
+aName      Person
+aZKey      68568419
+aPurpose   F
+aER_DiagramPosX 82
+aER_DiagramPosY 23
+
+eER_RelLinkRec 4
+aName      has employee
+aAutoSeq   N
+aHangingForeignKeyEntity N
+aZKey      1654854
+aCardMin   0
+aCardMax   m
+aTE_NoForeignKeyPrefix N
+
+eER_RelTypeRec 5
+aZKey      1654852
+aFact      Added thru ER Dialog
+aER_DiagramBendPosX 86
+aER_DiagramBendPosY 37
+aER_DiagramE1PosX 86
+aER_DiagramE1PosY 28
+aER_DiagramE2PosX 75
+aER_DiagramE2PosY 37
+
+eLOD_AttributeRec 3
+aZKey      1658406
+
+eER_AttributeRec 4
+
+eDomainRec 5
+
+eLOD_AttributeRec 3
+aZKey      1658407
+
+eER_AttributeRec 4
+aName      LoginName
+aZKey      1653224
+aNotNull   Y
+aDesc      Short nickname of the corporation for login purposes (e.g. Mason or Lonza or Stepan)
+
+eDomainRec 5
+
+eLOD_AttributeRec 3
+aZKey      1658408
+
+eER_AttributeRec 4
+
+eDomainRec 5
+
+eLOD_AttributeRec 3
+aZKey      1661367
+aUpdate    Y
+
+eER_AttributeRec 4
+aName      Description
+aZKey      1660582
+aCaseSens  Y
+
+eDomainRec 5
+
+eLOD_AttributeRec 3
+aZKey      1658409
+aUpdate    Y
+aSeqOrder  A
+
+eER_AttributeRec 4
+aName      AdministratorPassword
+aZKey      1653228
+aDesc      Administrator's logon password
+aCaseSens  Y
+
+eDomainRec 5
+
+eLOD_AttributeRec 3
+aZKey      1660043
+aUpdate    Y
+aSeqOrder  A
+
+eER_AttributeRec 4
+aName      Role
+aZKey      1659262
+aCaseSens  Y
+
+eDomainRec 5
+aZKey      1639285
+aName      CompanyRole
+aDomainType T
+aDataType  S
+aMaxStringLth 1
+aDesc      Primary Registrant, Subregistrant, Dual Registrant, Non-EPA
+aContextRestriction N
+
+eLOD_AttributeRec 3
+aZKey      1666243
+aWork      Y
+aUpdate    Y
+aSeqOrder  Y
+
+eER_AttributeRec 4
+aName      dLoginUserName
+aZKey      1666244
+
+eDomainRec 5
+
+eLOD_AttrDerivationOperRec 4
+aName      dLoginUserName
+aClass     0
+aZKey      1666246
+aType      A
+aReturnDataType N
+
+eSourceFileForDARec 5
+aZKey      1666245
+aName      qOrganiz
+aLanguageType V
+aExtension VML
+
+eLOD_AttributeRec 3
+aZKey      2436111
+aWork      Y
+aUpdate    Y
+aSeqOrder  Y
+
+eER_AttributeRec 4
+aName      dLoginUserRole
+aZKey      2436112
+
+eDomainRec 5
+
+eLOD_AttrDerivationOperRec 4
+aName      dLoginUserRole
+aZKey      2436113
+aType      A
+aReturnDataType N
+
+eSourceFileForDARec 5
+
+eLOD_AttributeRec 3
+aZKey      2435300
+aWork      Y
+aUpdate    Y
+aSeqOrder  Y
+
+eER_AttributeRec 4
+aName      dLoginUserNameRole
+aZKey      2435301
+
+eDomainRec 5
+
+eLOD_AttrDerivationOperRec 4
+aName      dLoginUserNameRole
+aZKey      2435302
+aType      A
+aReturnDataType N
+
+eSourceFileForDARec 5
+
+eER_EntityRec 3
+
+eLOD_Entity 2
+awkSelectedAttributeForDragSort 5
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 2
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 3
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 4
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 5
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 6
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 7
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_AttrDerivationOper 4
+
+eSourceFileForDA 5
+
+eLOD_Attribute 3
+awkSequence 8
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_AttrDerivationOper 4
+
+eSourceFileForDA 5
+
+eLOD_Attribute 3
+awkSequence 9
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_AttrDerivationOper 4
+
+eSourceFileForDA 5
+
+eER_Entity 3
+
+eLOD_Entity 2
+awkSelectedAttributeForDragSort 2
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 2
+
+eER_Attribute 4
+
+eDomain    5
+
+eER_Entity 3
+
+eER_RelLink 3
+
+eER_RelType 4
+
+eLOD_Entity 2
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 2
+
+eER_Attribute 4
+
+eDomain    5
+
+eER_Entity 3
+
+eER_RelLink 3
+
+eER_RelType 4
+
+eLOD_Entity 2
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eER_Entity 3
+
+eER_RelLink 3
+
+eER_RelType 4
+
+eLOD_Entity 2
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 2
+
+eER_Attribute 4
+
+eDomain    5
+
+eER_Entity 3
+
+eER_RelLink 3
+
+eER_RelType 4
+
+eLOD_Entity 2
+awkSelectedAttributeForDragSort 4
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 2
+
+eER_Attribute 4
+
+eDomain    5
+
+eER_Entity 3
+
+eER_RelLink 3
+
+eER_RelType 4
+
+eLOD_Entity 2
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 2
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 3
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 4
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 5
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 6
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 7
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 8
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 9
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 10
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 11
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 12
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 13
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 14
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 15
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 16
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 17
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 18
+
+eER_Attribute 4
+
+eDomain    5
+
+eER_Entity 3
+
+eER_RelLink 3
+
+eER_RelType 4
+
+eLOD_Entity 2
+
+eLOD_Attribute 3
+awkSequence 1
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 2
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 3
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 4
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 5
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 6
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 7
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 8
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 9
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 10
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 11
+
+eER_Attribute 4
+
+eDomain    5
+
+eLOD_Attribute 3
+awkSequence 12
+
+eER_Attribute 4
+
+eDomain    5
+
+eER_Entity 3
+
+eER_RelLink 3
+
+eER_RelType 4
+
+eSourceFile 2
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Instance
+aDataType  V
+aZKey      1666247
+
+eParameter 4
+aShortDesc Internal Entity Structure
+aDataType  S
+aZKey      1666248
+
+eParameter 4
+aShortDesc Internal Attrib Structure
+aDataType  S
+aZKey      1666249
+
+eParameter 4
+aShortDesc Get Or Set Flag
+aDataType  N
+aZKey      1666250
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Instance
+aDataType  V
+aZKey      2436114
+
+eParameter 4
+aShortDesc Internal Entity Structure
+aDataType  S
+aZKey      2436115
+
+eParameter 4
+aShortDesc Internal Attrib Structure
+aDataType  S
+aZKey      2436116
+
+eParameter 4
+aShortDesc Get Or Set Flag
+aDataType  N
+aZKey      2436117
+
+eOperation 3
+
+eParameter 4
+aShortDesc View to Instance
+aDataType  V
+aZKey      2435303
+
+eParameter 4
+aShortDesc Internal Entity Structure
+aDataType  S
+aZKey      2435304
+
+eParameter 4
+aShortDesc Internal Attrib Structure
+aDataType  S
+aZKey      2435305
+
+eParameter 4
+aShortDesc Get Or Set Flag
+aDataType  N
+aZKey      2435306
+
+ePOD       2
+aNAME      qOrganiz
+aZKey      1659219
+aTE_SourceZKey 4121658
+
+eTE_DB_Environ 3
+aName      ePamms
+aZKey      68568367
+aDesc      ePamms Application
+aType      P
+
+eTE_DBMS_Source 4
+aName      ePammsM
+aZKey      4121658
+aDesc      MySQL ePamms database
+aParadigm  R
+aDBMS      MySQL 5.1 via ODBC
+aGenerateExecutable kzhsqlmb
+aExecutable kzhsqloa
+aGenKeyExecutable kzhgenky
+aDisplayOwner Y
+aDisplayDBMS_ID N
+aDBH_Data  376
+TZDBHODO *********************** ********************************************************************************************************z1000-Zeidon    ZTF_12C4_TZDBHODO 05/07/10   14:07:31 1.0a2    
+eODBC      1
+aTimestampPrecision 3
+aTimestampAsString N
+aBlobsLast N
+aDropTables Y
+aAddTableNameToFK_Override Y
+aGenCreateIdxs Y
+aGenDropIdxs N
+aGenCreateTables Y
+
+
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+eOperationList 2
+
+eOperSourceFile 3
+
+i18        5
+i24        11
+i26        4
+i27        5
+i29        7
+i30        8
+i31        9
+i36        5
+i42        5
+i45        8
+i53        5
+i62        21
+i77        74
+i80        74
+i86        83
+i92        5
+i104       83
+i113       110
+i116       110
+i119       21
+i122       110
+i128       21
+i131       71
+i134       74
+i137       74
+i140       83
+i143       83
+i148       17
+i149       5
+i152       56
+i154       20
+i155       21
+i158       21
+i161       59
+i167       21
+i172       21
+i174       169
+i177       21
+i179       169
+i180       22
+i181       1
+i182       147
+i183       17
+i184       5
+i185       150
+i186       151
+i187       56
+i188       153
+i189       20
+i190       21
+i191       156
+i192       157
+i193       21
+i194       159
+i195       160
+i196       59
+i197       162
+i198       163
+i199       164
+i200       165
+i201       166
+i202       21
+i203       168
+i204       169
+i205       170
+i206       171
+i207       21
+i208       173
+i209       169
+i210       175
+i211       176
+i212       21
+i213       178
+i214       169
+i215       22
+i216       2
+i217       3
+i218       4
+i219       5
+i220       6
+i221       7
+i222       8
+i223       9
+i224       10
+i225       11
+i226       12
+i227       40
+i228       41
+i229       5
+i230       43
+i231       44
+i232       8
+i233       46
+i234       47
+i235       48
+i236       13
+i237       34
+i238       35
+i239       5
+i240       37
+i241       38
+i242       39
+i243       14
+i244       25
+i245       4
+i246       5
+i247       28
+i248       7
+i249       8
+i250       9
+i251       32
+i252       33
+i253       15
+i254       16
+i255       17
+i256       5
+i257       19
+i258       20
+i259       21
+i260       22
+i261       23
+i262       11
+i263       49
+i264       90
+i265       91
+i266       5
+i267       93
+i268       94
+i269       95
+i270       96
+i271       97
+i272       98
+i273       99
+i274       100
+i275       101
+i276       102
+i277       103
+i278       83
+i279       105
+i280       106
+i281       107
+i282       108
+i283       109
+i284       110
+i285       111
+i286       112
+i287       110
+i288       114
+i289       115
+i290       110
+i291       117
+i292       118
+i293       21
+i294       120
+i295       121
+i296       110
+i297       123
+i298       124
+i299       125
+i300       126
+i301       127
+i302       21
+i303       129
+i304       130
+i305       71
+i306       132
+i307       133
+i308       74
+i309       135
+i310       136
+i311       74
+i312       138
+i313       139
+i314       83
+i315       141
+i316       142
+i317       83
+i318       144
+i319       145
+i320       146
+i321       50
+i322       51
+i323       52
+i324       5
+i325       54
+i326       55
+i327       56
+i328       57
+i329       58
+i330       59
+i331       60
+i332       61
+i333       21
+i334       63
+i335       64
+i336       65
+i337       66
+i338       67
+i339       68
+i340       69
+i341       70
+i342       71
+i343       72
+i344       73
+i345       74
+i346       75
+i347       76
+i348       74
+i349       78
+i350       79
+i351       74
+i352       81
+i353       82
+i354       83
+i355       84
+i356       85
+i357       83
+i358       87
+i359       88
+i360       89
+i361       169
+i362       168
+i367       173
+i372       178
+i380       168
+i381       169
+i382       178
+i383       169
+i384       173
+i385       169

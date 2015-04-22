@@ -1,0 +1,119 @@
+ RGB -> CMY
+
+//RGB values from 0 to 255
+//CMY results from 0 to 1
+
+C = 1 - ( R / 255 )
+M = 1 - ( G / 255 )
+Y = 1 - ( B / 255 )
+
+
+
+
+ CMY -> RGB
+
+//CMY values from 0 to 1
+//RGB results from 0 to 255
+
+R = ( 1 - C ) * 255
+G = ( 1 - M ) * 255
+B = ( 1 - Y ) * 255
+
+
+
+
+
+ CMY -> CMYK
+
+//CMYK and CMY values from 0 to 1
+
+var_K = 1
+
+if ( C < var_K )   var_K = C
+if ( M < var_K )   var_K = M
+if ( Y < var_K )   var_K = Y
+if ( var_K == 1 ) { //Black
+   C = 0
+   M = 0
+   Y = 0
+}
+else {
+   C = ( C - var_K ) / ( 1 - var_K )
+   M = ( M - var_K ) / ( 1 - var_K )
+   Y = ( Y - var_K ) / ( 1 - var_K )
+}
+K = var_K
+
+
+
+
+
+
+CMYK -> CMY
+
+//CMYK and CMY values from 0 to 1
+
+C = ( C * ( 1 - K ) + K )
+M = ( M * ( 1 - K ) + K )
+Y = ( Y * ( 1 - K ) + K )
+
+
+
+
+
+
+
+
+
+CMYK to RGB conversion formula
+The R,G,B values are given in the range of 0..255.
+The red (R) color is calculated from the cyan (C) and black (K) colors:
+R = 255 x (1-C) x (1-K)
+The green color (G) is calculated from the magenta (M) and black (K) colors:
+G = 255 x (1-M) x (1-K)
+The blue color (B) is calculated from the yellow (Y) and black (K) colors:
+B = 255 x (1-Y) x (1-K)
+CMYK to RGB table
+Color	Color
+name
+(C,M,Y,K)	(R,G,B)	Hex
+ 	Black	(0,0,0,1)	(0,0,0)	#000000
+ 	White	(0,0,0,0)	(255,255,255)	#FFFFFF
+ 	Red	(0,1,1,0)	(255,0,0)	#FF0000
+ 	Green	(1,0,1,0)	(0,255,0)	#00FF00
+ 	Blue	(1,1,0,0)	(0,0,255)	#0000FF
+ 	Yellow	(0,0,1,0)	(255,255,0)	#FFFF00
+ 	Cyan	(1,0,0,0)	(0,255,255)	#00FFFF
+ 	Magenta	(0,1,0,0)	(255,0,255)	#FF00FF
+
+
+
+
+
+
+RGB to CMYK conversion formula
+The R,G,B values are divided by 255 to change the range from 0..255 to 0..1:
+R' = R/255
+G' = G/255
+B' = B/255
+The black key (K) color is calculated from the red (R'), green (G') and blue (B') colors:
+K = 1-max(R', G', B')
+The cyan color (C) is calculated from the red (R') and black (K) colors:
+C = (1-R'-K) / (1-K)
+The magenta color (M) is calculated from the green (G') and black (K) colors:
+M = (1-G'-K) / (1-K)
+The yellow color (Y) is calculated from the blue (B') and black (K) colors:
+Y = (1-B'-K) / (1-K)
+RGB to CMYK table
+Color	Color
+name
+(R,G,B)	Hex	(C,M,Y,K)
+ 	Black	(0,0,0)	#000000	(0,0,0,1)
+ 	White	(255,255,255)	#FFFFFF	(0,0,0,0)
+ 	Red	(255,0,0)	#FF0000	(0,1,1,0)
+ 	Green	(0,255,0)	#00FF00	(1,0,1,0)
+ 	Blue	(0,0,255)	#0000FF	(1,1,0,0)
+ 	Yellow	(255,255,0)	#FFFF00	(0,0,1,0)
+ 	Cyan	(0,255,255)	#00FFFF	(1,0,0,0)
+ 	Magenta	(255,0,255)	#FF00FF	(0,1,0,0)
+ 

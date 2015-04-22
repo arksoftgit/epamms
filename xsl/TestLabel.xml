@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!-- Output created by OpenCUAS -->
+   <zOI>
+      <SubregPhysicalLabelDef>
+         <Name>KennelSol 5 Gallon</Name>
+         <ProductName></ProductName>
+         <SubregLabelContent>
+            <EPA_RegistrationNumber></EPA_RegistrationNumber>
+            <EPA_EstablishmentNumber></EPA_EstablishmentNumber>
+            <ESL_Date></ESL_Date>
+         </SubregLabelContent>
+         <SPLD_GeneralSection>
+            <Title>PRECAUTIONARY STATEMENTS</Title>
+            <Subtitle>HAZARDS TO HUMANS AND DOMESTIC ANIMALS</Subtitle>
+            <SPLD_GeneralStatement>
+               <Text>DANGER. CORROSIVE. Causes irreversible eye damage and skin burns. Harmful if swallowed. Do not get in eyes, on skin, or on clothing. Wear protective eyewear (goggles, face shield or safety glasses), protective clothing and protective gloves (rubber or chemical resistant). Harmful if inhaled. Wash thoroughly with soap and water after handling. Remove contaminated clothing and wash clothing before reuse.</Text>
+            </SPLD_GeneralStatement>
+         </SPLD_GeneralSection>
+         <SPLD_GeneralSection>
+            <Title></Title>
+            <Subtitle></Subtitle>
+            <SPLD_GeneralStatement>
+               <Text>Hold eye open and rinse slowly and gently with water for 15 ? 20 minutes. Remove contact lenses, if present, after the first 5 minutes, then continue rinsing eye.</Text>
+            </SPLD_GeneralStatement>
+            <SPLD_GeneralStatement>
+               <Text>Take off contaminated clothing. Rinse skin immediately with plenty of water for 15 ? 20 minutes.</Text>
+            </SPLD_GeneralStatement>
+            <SPLD_GeneralStatement>
+               <Text>Call a poison control center or doctor immediately for treatment advice. Have person sip a glass of water if able to swallow. Do not induce vomiting unless told to do so by the poison control center or doctor. Do not give anything by mouth to an unconscious person.</Text>
+            </SPLD_GeneralStatement>
+            <SPLD_GeneralStatement>
+               <Text>Move person to fresh air. If person is not breathing, call 911 or an ambulance, then give artificial respiration, preferably by mouth-to-mouth, if possible. Call a poison control center or doctor for treatment advice. Have the product container or label with you when calling a poison control center or doctor or going for treatment. NOTE TO PHYSICIAN: Probable mucosal damage may contraindicate the use of gastric lavage. Measures against circulatory shock, respiratory depression and convulsion may be needed.ove contact lenses, if present, after the first 5 minutes, then continue rinsing eye.</Text>
+            </SPLD_GeneralStatement>
+         </SPLD_GeneralSection>
+         <SPLD_GeneralSection>
+            <Title>ENVIRONMENTAL HAZARDS</Title>
+            <Subtitle></Subtitle>
+            <SPLD_GeneralStatement>
+               <Text>Do not discharge effluent containing this product into lakes, streams, ponds, estuaries, oceans, or other waters unless in accordance with the requirements of a National Pollutant Discharge Elimination System (NPDES) permit and the permitting authority has been notified in writing prior to discharge. Do not discharge effluent containing this product to sewer systems without previously notifying the local sewage treatment plant authority. For guidance contact your State Water Board or Regional Office of the EPA.</Text>
+            </SPLD_GeneralStatement>
+         </SPLD_GeneralSection>
+         <SPLD_IngredientsSection>
+            <ActiveTitle>Active Ingredients:</ActiveTitle>
+            <InertTitle>Inert Ingredients:</InertTitle>
+            <GeneralInactivePercent>95.775</GeneralInactivePercent>
+            <SPLD_IngredientsStatement>
+               <ChemicalName>Didecyl dimethyl ammonium chloride</ChemicalName>
+               <Percent>2.535</Percent>
+            </SPLD_IngredientsStatement>
+            <SPLD_IngredientsStatement>
+               <ChemicalName>n-Alkyll (C<sub>14</sub> 50%, C<sub>12</sub> 40%, C<sub>16</sub> 10%) dimethyl benzyl ammonium chloride</ChemicalName>
+               <Percent>1.69</Percent>
+            </SPLD_IngredientsStatement>
+         </SPLD_IngredientsSection>
+         <DisplaySection1>
+            <Title></Title>
+            <DisplayStatement2>
+               <Title></Title>
+               <Text>It is a violation of Federal Law to use this product in a manner inconsistent with its labeling.</Text>
+            </DisplayStatement2>
+            <DisplayStatement3>
+               <Title>DIRECTIONS FOR DISINFECTlNG: (Bactericidal, Fungicidal, Virucidal)</Title>
+               <Text>For use on hard, non-porous surfaces in animal care facilities such as floors, walls, metal surfaces, stainless steel surfaces, glazed porcelain, and plastic surfaces. Remove gross filth and heavy soil deposits then thoroughly wet surfaces. Use 2 ounces per gallon of water (8 ounces per gallon against canine parvovirus and Porcine parvovirus) for a minimum contact time of 10 minutes in a single application. Can be applied with a cloth, mop, or sponge, as well as by coarse spray or soaking. The use solution is prepared fresh for each use then discarded. Rinsing is not necessary unless floors are to be waxed or polished. This product is not for use on medical device surfaces.</Text>
+            </DisplayStatement3>
+            <DisplayStatement4>
+               <Title>FUNGICIDAL DIRECTIONS:</Title>
+               <Text>For use in areas such as locker rooms, dressing rooms, shower and bath areas and exercise facilities follow disinfection directions.</Text>
+            </DisplayStatement4>
+            <DisplayStatement5>
+               <Title>MILDEWSTATIC INSTRUCTIONS:</Title>
+               <Text>Will effectively control the growth of mold and mildew plus the odors caused by them when applied to hard, non-porous surfaces such as walls, floors, and table tops. Apply solution (2 ounces per gallon of water) with a cloth, mop, sponge or coarse spray making sure to wet all surfaces completely. Let air dry. Repeat application weekly or when growth reappears.</Text>
+            </DisplayStatement5>
+            <DisplayStatement6>
+               <Title>VETERINARY CLINICS / ANIMAL CARE / ANIMAL LIFE SCIENCE LABORATORIES / ZOOS / PET SHOP / KENNELS / BREEDING AND GROOMING ESTABLISHMENTS / EQUINE FARMS DISINFECTION DIRECTIONS:</Title>
+               <Text>For disinfecting the following hard nonporous surfaces: equipment not used for animal food or water, utensils, instruments, cages, kennels, stables, catteries, etc. Remove all animals and feeds from premises, animal transportation vehicles, crates, etc. Remove all litter, droppings and manure from floors, walls and surfaces of facilities occupied or traversed by animals. Thoroughly clean all surfaces with soap or detergent and rinse with water. Saturate surfaces with a solution of 2 oz of KennelSol per gallon of water (or equivalent dilution) (8 ounces per gallon against Canine parvovirus or Porcine parvovirus), using a cloth, mop, sponge, spray, or soaking for a period of 10 minutes. Ventilate buildings and other closed spaces. Do not house animals or employ equipment until treatment has been absorbed, set or dried.</Text>
+            </DisplayStatement6>
+            <DisplayStatement7>
+               <Title>*FOR CANINE PARVOVIRUS (AND PORCINE PARVOVIRUS) ACTIVITY:</Title>
+               <Text>KennelSol is effective against Canine Parvovirus (and Porcine parvovirus) at 8 oz. per gallon. Follow Veterinary Practice / Animal Care / Animal Laboratory / Zoos / Pet Shop / Kennels Disinfection Directions.</Text>
+            </DisplayStatement7>
+            <DisplayStatement8>
+               <Title>**SPECIAL INSTRUCTIONS FOR INACTIVATING AVIAN INFLUENZA:</Title>
+               <Text>Remove all poultry and feeds from premises, trucks, coops, and crates. Remove all litter and droppings from floors, walls, and surfaces of facilities occupied or traversed by poultry. Empty all troughs, racks, and other feeding and watering appliances. Thoroughly clean all surfaces with soap or detergent and rinse with water. Saturate surfaces with the disinfecting solution (2 oz per gallon of water) (660 ppm active quat) (equivalent use dilution) for a period of 10 minutes. Immerse all halters, ropes and other types of equipment sed in handling and restraining animals as well as forks, shovels, and scrapers used in removing litter and manure. Ventilate buildings, coops, and other closed spaces. Do not house poultry or employ equipment until treatment has been absorbed, set, or dried. Thoroughly scrub treated feed racks, troughs, automatic feeders, fountains, and waterers with soap or detergent, and rinse with potable water before reuse.</Text>
+            </DisplayStatement8>
+         </DisplaySection1>
+         <DisplaySection9>
+            <Title></Title>
+            <DisplayStatement10>
+               <Title></Title>
+               <Text>Germicidal Detergent and Deordorant</Text>
+            </DisplayStatement10>
+         </DisplaySection9>
+         <DisplaySection11>
+            <Title></Title>
+            <DisplayStatement12>
+               <Title></Title>
+               <Text>Bactericidal against the following pathogenic bacteria according to the AOAC Use-Dilution Test method, current edition, modified in the presence of 400 ppm synthetic hard water (calculated as CaCO<sub>3</sub>) plus 5% organic serum:</Text>
+            </DisplayStatement12>
+            <DisplayUsageColumn1>
+               <Name>(1)  ATCC and antibiotic-resistant strain</Name>
+            </DisplayUsageColumn1>
+            <DisplayUsageColumn1>
+               <Name>(2)  antibiotic-resistant strain only</Name>
+            </DisplayUsageColumn1>
+            <DisplayUsageColumn2>
+               <Name>Acinetobacter calcoaceticus</Name>
+            </DisplayUsageColumn2>
+            <DisplayUsageColumn2>
+               <Name>Bordetella bronchiseptica</Name>
+            </DisplayUsageColumn2>
+         </DisplaySection11>
+         <DisplaySection13>
+            <Title></Title>
+            <DisplayStatement14>
+               <Title></Title>
+               <Text>A multi-purpose germicidal detergent and deodorant effective in hard waters up to 400 ppm hard water (calculated as CaCO<sub>3</sub>) plus 5 % organic serum. Disinfects, cleans, and deodorizes in one labor saving step.</Text>
+            </DisplayStatement14>
+         </DisplaySection13>
+         <DisplaySection15>
+            <Title></Title>
+            <DisplayStatement16>
+               <Title></Title>
+               <Text>For use in .</Text>
+            </DisplayStatement16>
+         </DisplaySection15>
+         <DisplaySection17>
+            <Title></Title>
+            <DisplayStatement18>
+               <Title></Title>
+               <Text>Fungicidal against  albicans according to the AOAC fungicidal test, modified in the presense of 400 ppm hard water (calculated as CaCO<sub>3</sub>) plus 5% organic serum.</Text>
+            </DisplayStatement18>
+         </DisplaySection17>
+         <DisplaySection19>
+            <Title></Title>
+            <DisplayStatement20>
+               <Title></Title>
+               <Text>Virucidal against  according to the virucidal qualification, modified in the presence of 400 ppm hard water (calculated as CaCO3) plus 5 % organic serum.</Text>
+            </DisplayStatement20>
+         </DisplaySection19>
+         <DisplaySection21>
+            <Title></Title>
+            <DisplayStatement22>
+               <Title>Storage and Disposal</Title>
+               <Text>(containers for household/residential use) Store in original container in areas inaccessible to children. Nonrefillable container. Do not reuse or refill this container. Offer for recycling if available.</Text>
+            </DisplayStatement22>
+            <DisplayStatement23>
+               <Title>Storage and Disposal</Title>
+               <Text>(containers for commercial, industrial, and institutional use) Do not contaminate water, food, or feed by storage or disposal.</Text>
+            </DisplayStatement23>
+            <DisplayStatement24>
+               <Title>Pesticide Disposal</Title>
+               <Text>Store in original container in areas inaccessible to children. Open dumping is prohibited. Do not reuse empty container.</Text>
+            </DisplayStatement24>
+            <DisplayStatement25>
+               <Title>Pesticide Disposal</Title>
+               <Text>Pesticide wastes are acutely hazardous. Improper disposal of excess pesticide, spray mixture or rinsate is a violation of Federal Law. If these wastes cannot be disposed of by use according to label instruction, contact your local State Pesticide or Environmental </Text>
+            </DisplayStatement25>
+         </DisplaySection21>
+         <DisplaySection26>
+            <Title></Title>
+            <DisplayStatement27>
+               <Title></Title>
+               <Text>Control Agency, or the Hazardous Waste representative at the nearest EPA Regional Office for guidance.</Text>
+            </DisplayStatement27>
+            <DisplayStatement28>
+               <Title>Container Handling</Title>
+               <Text>(Plastic containers:) Nonrefillable container. Do not reuse or refill this container. Triple rinse container (or equivalent) promptly after emptying. Triple rinse as follows: Fill container 1/4 full with water. Tip container on side and roll it back and forth, ensuring at least one complete revolution for 30 seconds. Stand container on its end and tip it back and forth several times. Turn the container over its other end and tip it back and forth several times. Follow Pesticide Disposal instructions for rinsate disposal. Repeat two more times.</Text>
+            </DisplayStatement28>
+         </DisplaySection26>
+         <DisplaySection29>
+            <Title></Title>
+            <DisplayStatement30>
+               <Title></Title>
+               <Text>DANGER. CORROSIVE. Causes irreversible eye damage and skin burns. Harmful if swallowed. Do not get in eyes, on skin, or on clothing. Wear protective eyewear (goggles, face shield or safety glasses), protective clothing and protective gloves (rubber or chemical resistant). Harmful if inhaled. Wash thoroughly with soap and water after handling. Remove </Text>
+            </DisplayStatement30>
+         </DisplaySection29>
+         <DisplaySection31>
+            <Title></Title>
+            <DisplayStatement32>
+               <Title></Title>
+               <Text>contaminated clothing and wash clothing before reuse.</Text>
+            </DisplayStatement32>
+         </DisplaySection31>
+         <DisplaySection33>
+            <Title></Title>
+            <DisplayStatement34>
+               <Title></Title>
+               <Text>IF IN EYES: Hold eye open and rinse slowly and gently with water for 15 ? 20 minutes. Remove contact lenses, if present, after the first 5 minutes, then continue rinsing eye.</Text>
+            </DisplayStatement34>
+            <DisplayStatement35>
+               <Title></Title>
+               <Text>IF ON SKIN OR CLOTHING: Take off contaminated clothing. Rinse skin immediately with plenty of water for 15 ? 20 minutes.</Text>
+            </DisplayStatement35>
+            <DisplayStatement36>
+               <Title></Title>
+               <Text>IF SWALLOWED: Call a poison control center or doctor immediately for treatment advice. Have person sip a glass of water if able to swallow. Do not induce vomiting unless told to do so by the poison control center or doctor. Do not give anything by mouth to an unconscious person.</Text>
+            </DisplayStatement36>
+            <DisplayStatement37>
+               <Title></Title>
+               <Text>IF INHALED: Move person to fresh air. If person is not breathing, call 911 or an ambulance, then give artificial respiration, preferably by mouth-to-mouth, if possible. Call a poison control center or doctor for treatment advice. Have the product container or label with you when calling a poison control center or doctor or going for treatment. NOTE TO PHYSICIAN: Probable mucosal </Text>
+            </DisplayStatement37>
+         </DisplaySection33>
+         <DisplaySection38>
+            <Title></Title>
+            <DisplayStatement39>
+               <Title></Title>
+               <Text>damage may contraindicate the use of gastric lavage. Measures against circulatory shock, respiratory depression and convulsion may be needed.ove contact lenses, if present, after the first 5 minutes, then continue rinsing eye.</Text>
+            </DisplayStatement39>
+         </DisplaySection38>
+         <DisplaySection40>
+            <Title></Title>
+            <DisplayStatement41>
+               <Title></Title>
+               <Text>Do not discharge effluent containing this product into lakes, streams, ponds, estuaries, oceans, or other waters unless in accordance with the requirements of a National Pollutant Discharge Elimination System (NPDES) permit and the permitting authority has been notified in writing prior to discharge. Do not discharge effluent containing this product to sewer systems without previously notifying the local sewage treatment plant authority. For guidance contact your State Water Board or Regional Office of the EPA.</Text>
+            </DisplayStatement41>
+         </DisplaySection40>
+         <SPLD_HumanHazardSection>
+            <EPA_SignalWord>DANGER</EPA_SignalWord>
+            <EPA_ChildHazardWarning>U</EPA_ChildHazardWarning>
+            <PrecautionaryStatement>See {{Precautionary Position}} Panel for Precautionary Statements and First Aid</PrecautionaryStatement>
+         </SPLD_HumanHazardSection>
+      </SubregPhysicalLabelDef>
+   </zOI>
