@@ -790,14 +790,14 @@ ProcessPDF_Blocks( VIEW mSPLDef    BASED ON LOD mSPLDef,
                
                // Check if Title should be converted to upper case.
                szTitle = "Directions for Use"
-               SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "FIRST AID Header"
+               SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "Header"
                IF RESULT >= zCURSOR_SET
                   szTitle = "DIRECTIONS FOR USE"
                END 
                
                // Set up Directions for Use Title.
                szWriteBuffer = szLeadingBlanks + "   <fo:block "
-               AddFormatToSpecialText( mSPLDefPDF, "DIRECTIONS Header", szWriteBuffer )
+               AddFormatToSpecialText( mSPLDefPDF, "Header", szWriteBuffer )
                WL_QC( mSPLDef, lFile, szWriteBuffer, "^", 0 )
                
                szWriteBuffer = szLeadingBlanks + "      " + szTitle
@@ -825,11 +825,11 @@ ProcessPDF_Blocks( VIEW mSPLDef    BASED ON LOD mSPLDef,
                // For Marketing, we will process a Section if it's Name matches the name in the Block.
                SET CURSOR FIRST mSPLDef.SPLD_MarketingSection WHERE mSPLDef.SPLD_MarketingSection.Name = mSPLDefPDF.LLD_Block.Name 
                IF RESULT >= zCURSOR_SET 
-                  // If there is a "MARKETING Header" entry, add it.
-                  SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "MARKETING Header"
+                  // If there is a Marketing "Header" entry, add it.
+                  SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "Header"
                   IF RESULT >= zCURSOR_SET
                      szWriteBuffer = szLeadingBlanks + "   <fo:block "
-                     AddFormatToSpecialText( mSPLDefPDF, "MARKETING Header", szWriteBuffer )
+                     AddFormatToSpecialText( mSPLDefPDF, "Header", szWriteBuffer )
                      WL_QC( mSPLDef, lFile, szWriteBuffer, "^", 0 )
                        
                      szWriteBuffer = szLeadingBlanks + "      Marketing"
@@ -913,14 +913,14 @@ ProcessPDF_Blocks( VIEW mSPLDef    BASED ON LOD mSPLDef,
                
                // Check if Title should be converted to upper case.
                szTitle = "First Aid"
-               SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "FIRST AID Header"
+               SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "Header"
                IF RESULT >= zCURSOR_SET
                   szTitle = "FIRST AID"
                END 
                
                // Set up First Aid Title.
                szWriteBuffer = szLeadingBlanks + "   <fo:block "
-               AddFormatToSpecialText( mSPLDefPDF, "FIRST AID Header", szWriteBuffer )
+               AddFormatToSpecialText( mSPLDefPDF, "Header", szWriteBuffer )
                WL_QC( mSPLDef, lFile, szWriteBuffer, "^", 0 )
                
                szWriteBuffer = szLeadingBlanks + "      " + szTitle
@@ -4183,10 +4183,11 @@ GenerateAttribute( VIEW mSPLDef BASED ON LOD mSPLDef,
 END
 
 /*************************************************************************************************
+**  No longer used ... incorrectly deletes everything up front.  Replaced by SetUpKeywordEntries.
 **    
 **    OPERATION: SetUpFormattingSelect
-**    
-*************************************************************************************************/
+**
+  
 TRANSFORMATION OPERATION
 SetUpFormattingSelect( VIEW mSPLDefPanel BASED ON LOD mSPLDef,
                        STRING ( 50 ) szSectionType )
@@ -4222,7 +4223,7 @@ SetUpFormattingSelect( VIEW mSPLDefPanel BASED ON LOD mSPLDef,
             CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
             mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Text" 
             CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-            mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "DIRECTIONS Header" 
+            mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Header" 
          ELSE
             IF szSectionType = "Marketing"
                // Marketing
@@ -4233,7 +4234,7 @@ SetUpFormattingSelect( VIEW mSPLDefPanel BASED ON LOD mSPLDef,
                CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
                mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Column List" 
                CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-               mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "MARKETING Header" 
+               mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Header" 
             ELSE
                IF szSectionType = "FirstAid"
                   // First Aid
@@ -4242,7 +4243,7 @@ SetUpFormattingSelect( VIEW mSPLDefPanel BASED ON LOD mSPLDef,
                   CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
                   mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Text" 
                   CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-                  mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "FIRST AID Header" 
+                  mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Header" 
                ELSE
                   // Default
                   CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
@@ -4259,6 +4260,7 @@ SetUpFormattingSelect( VIEW mSPLDefPanel BASED ON LOD mSPLDef,
    SET CURSOR FIRST mSPLDefPanel.SpecialFormattingSelectEntry 
    
 END
+*************************************************************************************************/
 
 /*************************************************************************************************
 **    
@@ -4351,11 +4353,14 @@ CheckAddKeywordEntry( VIEW mSPLDefBlock BASED ON LOD mSPLDef,
    // Make sure that the entry for the Keyword passed in exists.
    SET CURSOR FIRST mSPLDefBlock.LLD_SpecialSectionAttribute WHERE mSPLDefBlock.LLD_SpecialSectionAttribute.Name = szKeywordName
    IF RESULT < zCURSOR_SET
+      TraceLineS( "CheckAddKeyordEntry adding: ", szKeywordName )
       SET CURSOR LAST mSPLDefBlock.LLD_SpecialSectionAttribute  
       CREATE ENTITY mSPLDefBlock.LLD_SpecialSectionAttribute
       mSPLDefBlock.LLD_SpecialSectionAttribute.Name = szKeywordName
-      CREATE ENTITY mSPLDefBlock.LLD_SpecialSectionAttrBlock  
-   END 
+      CREATE ENTITY mSPLDefBlock.LLD_SpecialSectionAttrBlock 
+   ELSE
+      TraceLineS( "CheckAddKeyordEntry located: ", szKeywordName )
+   END
    
 END
 
@@ -4387,20 +4392,20 @@ SetUpKeywordEntries( VIEW mSPLDefBlock BASED ON LOD mSPLDef,
             // Directions for Use
             CheckAddKeywordEntry( mSPLDefBlock, "Title" )
             CheckAddKeywordEntry( mSPLDefBlock, "Text" )
-            CheckAddKeywordEntry( mSPLDefBlock, "DIRECTIONS Header" )
+            CheckAddKeywordEntry( mSPLDefBlock, "Header" )
          ELSE
             IF szSectionType = "Marketing"
                // Marketing
                CheckAddKeywordEntry( mSPLDefBlock, "Title" )
                CheckAddKeywordEntry( mSPLDefBlock, "Text" )
                CheckAddKeywordEntry( mSPLDefBlock, "Column List" )
-               CheckAddKeywordEntry( mSPLDefBlock, "MARKETING Header" )
+               CheckAddKeywordEntry( mSPLDefBlock, "Header" )
             ELSE
                IF szSectionType = "FirstAid"
                   // First Aid
                   CheckAddKeywordEntry( mSPLDefBlock, "Title" )
                   CheckAddKeywordEntry( mSPLDefBlock, "Text" )
-                  CheckAddKeywordEntry( mSPLDefBlock, "FIRST AID Header" )
+                  CheckAddKeywordEntry( mSPLDefBlock, "Header" )
                ELSE
                   // Default
                   CheckAddKeywordEntry( mSPLDefBlock, "Title" )

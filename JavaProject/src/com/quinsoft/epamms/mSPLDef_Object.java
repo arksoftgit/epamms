@@ -4418,8 +4418,8 @@ omSPLDef_ProcessPDF_Blocks( View     mSPLDef,
                      sb_szTitle = new StringBuilder( szTitle );
                                     ZeidonStringCopy( sb_szTitle, 1, 0, "Directions for Use", 1, 0, 91 );
                   szTitle = sb_szTitle.toString( );}
-                  //:SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "FIRST AID Header"
-                  RESULT = SetCursorFirstEntityByString( mSPLDefPDF, "LLD_SpecialSectionAttribute", "Name", "FIRST AID Header", "" );
+                  //:SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "Header"
+                  RESULT = SetCursorFirstEntityByString( mSPLDefPDF, "LLD_SpecialSectionAttribute", "Name", "Header", "" );
                   //:IF RESULT >= zCURSOR_SET
                   if ( RESULT >= zCURSOR_SET )
                   { 
@@ -4451,13 +4451,13 @@ omSPLDef_ProcessPDF_Blocks( View     mSPLDef,
                      sb_szWriteBuffer = new StringBuilder( szWriteBuffer );
                                     ZeidonStringConcat( sb_szWriteBuffer, 1, 0, "   <fo:block ", 1, 0, 32001 );
                   szWriteBuffer = sb_szWriteBuffer.toString( );}
-                  //:AddFormatToSpecialText( mSPLDefPDF, "DIRECTIONS Header", szWriteBuffer )
+                  //:AddFormatToSpecialText( mSPLDefPDF, "Header", szWriteBuffer )
                   {StringBuilder sb_szWriteBuffer;
                   if ( szWriteBuffer == null )
                      sb_szWriteBuffer = new StringBuilder( 32 );
                   else
                      sb_szWriteBuffer = new StringBuilder( szWriteBuffer );
-                                     omSPLDef_AddFormatToSpecialText( mSPLDefPDF, "DIRECTIONS Header", sb_szWriteBuffer );
+                                     omSPLDef_AddFormatToSpecialText( mSPLDefPDF, "Header", sb_szWriteBuffer );
                   szWriteBuffer = sb_szWriteBuffer.toString( );}
                   //:WL_QC( mSPLDef, lFile, szWriteBuffer, "^", 0 )
                   try
@@ -4579,9 +4579,9 @@ omSPLDef_ProcessPDF_Blocks( View     mSPLDef,
                      //:IF RESULT >= zCURSOR_SET 
                      if ( RESULT >= zCURSOR_SET )
                      { 
-                        //:// If there is a "MARKETING Header" entry, add it.
-                        //:SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "MARKETING Header"
-                        RESULT = SetCursorFirstEntityByString( mSPLDefPDF, "LLD_SpecialSectionAttribute", "Name", "MARKETING Header", "" );
+                        //:// If there is a Marketing "Header" entry, add it.
+                        //:SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "Header"
+                        RESULT = SetCursorFirstEntityByString( mSPLDefPDF, "LLD_SpecialSectionAttribute", "Name", "Header", "" );
                         //:IF RESULT >= zCURSOR_SET
                         if ( RESULT >= zCURSOR_SET )
                         { 
@@ -4600,13 +4600,13 @@ omSPLDef_ProcessPDF_Blocks( View     mSPLDef,
                               sb_szWriteBuffer = new StringBuilder( szWriteBuffer );
                                                       ZeidonStringConcat( sb_szWriteBuffer, 1, 0, "   <fo:block ", 1, 0, 32001 );
                            szWriteBuffer = sb_szWriteBuffer.toString( );}
-                           //:AddFormatToSpecialText( mSPLDefPDF, "MARKETING Header", szWriteBuffer )
+                           //:AddFormatToSpecialText( mSPLDefPDF, "Header", szWriteBuffer )
                            {StringBuilder sb_szWriteBuffer;
                            if ( szWriteBuffer == null )
                               sb_szWriteBuffer = new StringBuilder( 32 );
                            else
                               sb_szWriteBuffer = new StringBuilder( szWriteBuffer );
-                                                       omSPLDef_AddFormatToSpecialText( mSPLDefPDF, "MARKETING Header", sb_szWriteBuffer );
+                                                       omSPLDef_AddFormatToSpecialText( mSPLDefPDF, "Header", sb_szWriteBuffer );
                            szWriteBuffer = sb_szWriteBuffer.toString( );}
                            //:WL_QC( mSPLDef, lFile, szWriteBuffer, "^", 0 )
                            try
@@ -4831,8 +4831,8 @@ omSPLDef_ProcessPDF_Blocks( View     mSPLDef,
                                  sb_szTitle = new StringBuilder( szTitle );
                                                             ZeidonStringCopy( sb_szTitle, 1, 0, "First Aid", 1, 0, 91 );
                               szTitle = sb_szTitle.toString( );}
-                              //:SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "FIRST AID Header"
-                              RESULT = SetCursorFirstEntityByString( mSPLDefPDF, "LLD_SpecialSectionAttribute", "Name", "FIRST AID Header", "" );
+                              //:SET CURSOR FIRST mSPLDefPDF.LLD_SpecialSectionAttribute WHERE mSPLDefPDF.LLD_SpecialSectionAttribute.Name = "Header"
+                              RESULT = SetCursorFirstEntityByString( mSPLDefPDF, "LLD_SpecialSectionAttribute", "Name", "Header", "" );
                               //:IF RESULT >= zCURSOR_SET
                               if ( RESULT >= zCURSOR_SET )
                               { 
@@ -4864,13 +4864,13 @@ omSPLDef_ProcessPDF_Blocks( View     mSPLDef,
                                  sb_szWriteBuffer = new StringBuilder( szWriteBuffer );
                                                             ZeidonStringConcat( sb_szWriteBuffer, 1, 0, "   <fo:block ", 1, 0, 32001 );
                               szWriteBuffer = sb_szWriteBuffer.toString( );}
-                              //:AddFormatToSpecialText( mSPLDefPDF, "FIRST AID Header", szWriteBuffer )
+                              //:AddFormatToSpecialText( mSPLDefPDF, "Header", szWriteBuffer )
                               {StringBuilder sb_szWriteBuffer;
                               if ( szWriteBuffer == null )
                                  sb_szWriteBuffer = new StringBuilder( 32 );
                               else
                                  sb_szWriteBuffer = new StringBuilder( szWriteBuffer );
-                                                             omSPLDef_AddFormatToSpecialText( mSPLDefPDF, "FIRST AID Header", sb_szWriteBuffer );
+                                                             omSPLDef_AddFormatToSpecialText( mSPLDefPDF, "Header", sb_szWriteBuffer );
                               szWriteBuffer = sb_szWriteBuffer.toString( );}
                               //:WL_QC( mSPLDef, lFile, szWriteBuffer, "^", 0 )
                               try
@@ -16952,171 +16952,6 @@ omSPLDef_GenerateAttribute( View     mSPLDef,
 
 
 //:TRANSFORMATION OPERATION
-public int 
-omSPLDef_SetUpFormattingSelect( View     mSPLDefPanel,
-                                String   szSectionType )
-{
-   int      RESULT = 0;
-
-   //:SetUpFormattingSelect( VIEW mSPLDefPanel BASED ON LOD mSPLDef,
-   //:                    STRING ( 50 ) szSectionType )
-
-   //:// Initialize the SpecialFormattingSelectEntry entries depending on Section Type.
-   //:FOR EACH mSPLDefPanel.SpecialFormattingSelectEntry 
-   RESULT = SetCursorFirstEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", "" );
-   while ( RESULT > zCURSOR_UNCHANGED )
-   { 
-      //:DELETE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry NONE 
-      RESULT = DeleteEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zREPOS_NONE );
-      RESULT = SetCursorNextEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", "" );
-   } 
-
-   //:END
-   //:IF szSectionType = "HumanHazard" 
-   if ( ZeidonStringCompare( szSectionType, 1, 0, "HumanHazard", 1, 0, 51 ) == 0 )
-   { 
-      //:// Human Hazard
-      //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-      RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-      //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Hazards Warning"
-      SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Hazards Warning" );
-      //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-      RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-      //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Hazards Signal Word"
-      SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Hazards Signal Word" );
-      //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-      RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-      //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Hazards Precautionary"
-      SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Hazards Precautionary" );
-      //:ELSE
-   } 
-   else
-   { 
-      //:IF szSectionType = "Ingredients" 
-      if ( ZeidonStringCompare( szSectionType, 1, 0, "Ingredients", 1, 0, 51 ) == 0 )
-      { 
-         //:// Ingredients
-         //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-         RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-         //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Title"
-         SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Title" );
-         //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-         RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-         //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Ingredients Items" 
-         SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Ingredients Items" );
-         //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-         RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-         //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Ingredients Inert" 
-         SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Ingredients Inert" );
-         //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-         RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-         //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Ingredients Total" 
-         SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Ingredients Total" );
-         //:ELSE
-      } 
-      else
-      { 
-         //:IF szSectionType = "DirectionsForUse" 
-         if ( ZeidonStringCompare( szSectionType, 1, 0, "DirectionsForUse", 1, 0, 51 ) == 0 )
-         { 
-            //:// Directions for Use
-            //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-            RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-            //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Title"
-            SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Title" );
-            //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-            RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-            //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Text" 
-            SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Text" );
-            //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-            RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-            //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "DIRECTIONS Header" 
-            SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "DIRECTIONS Header" );
-            //:ELSE
-         } 
-         else
-         { 
-            //:IF szSectionType = "Marketing"
-            if ( ZeidonStringCompare( szSectionType, 1, 0, "Marketing", 1, 0, 51 ) == 0 )
-            { 
-               //:// Marketing
-               //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-               RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-               //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Title"
-               SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Title" );
-               //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-               RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-               //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Text" 
-               SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Text" );
-               //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-               RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-               //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Column List" 
-               SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Column List" );
-               //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-               RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-               //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "MARKETING Header" 
-               SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "MARKETING Header" );
-               //:ELSE
-            } 
-            else
-            { 
-               //:IF szSectionType = "FirstAid"
-               if ( ZeidonStringCompare( szSectionType, 1, 0, "FirstAid", 1, 0, 51 ) == 0 )
-               { 
-                  //:// First Aid
-                  //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-                  RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-                  //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Title"
-                  SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Title" );
-                  //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-                  RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-                  //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Text" 
-                  SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Text" );
-                  //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-                  RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-                  //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "FIRST AID Header" 
-                  SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "FIRST AID Header" );
-                  //:ELSE
-               } 
-               else
-               { 
-                  //:// Default
-                  //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-                  RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-                  //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Title"
-                  SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Title" );
-                  //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-                  RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-                  //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Text" 
-                  SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Text" );
-               } 
-
-               //:END
-            } 
-
-            //:END
-         } 
-
-         //:END
-      } 
-
-      //:END
-   } 
-
-   //:END
-   //:CREATE ENTITY mSPLDefPanel.SpecialFormattingSelectEntry 
-   RESULT = CreateEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", zPOS_AFTER );
-   //:mSPLDefPanel.SpecialFormattingSelectEntry.KeywordName = "Block"
-   SetAttributeFromString( mSPLDefPanel, "SpecialFormattingSelectEntry", "KeywordName", "Block" );
-   //:SET CURSOR FIRST mSPLDefPanel.SpecialFormattingSelectEntry 
-   RESULT = SetCursorFirstEntity( mSPLDefPanel, "SpecialFormattingSelectEntry", "" );
-   return( 0 );
-//    
-// END
-} 
-
-
-//:TRANSFORMATION OPERATION
 //:ComputeTopPositions( VIEW mSPLDef BASED ON LOD mSPLDef )
 
 //:   DECIMAL LastBlockTopPosition
@@ -17503,17 +17338,25 @@ omSPLDef_CheckAddKeywordEntry( View     mSPLDefBlock,
    //:IF RESULT < zCURSOR_SET
    if ( RESULT < zCURSOR_SET )
    { 
+      //:TraceLineS( "CheckAddKeyordEntry adding: ", szKeywordName )
+      TraceLineS( "CheckAddKeyordEntry adding: ", szKeywordName );
       //:SET CURSOR LAST mSPLDefBlock.LLD_SpecialSectionAttribute  
       RESULT = SetCursorLastEntity( mSPLDefBlock, "LLD_SpecialSectionAttribute", "" );
       //:CREATE ENTITY mSPLDefBlock.LLD_SpecialSectionAttribute
       RESULT = CreateEntity( mSPLDefBlock, "LLD_SpecialSectionAttribute", zPOS_AFTER );
       //:mSPLDefBlock.LLD_SpecialSectionAttribute.Name = szKeywordName
       SetAttributeFromString( mSPLDefBlock, "LLD_SpecialSectionAttribute", "Name", szKeywordName );
-      //:CREATE ENTITY mSPLDefBlock.LLD_SpecialSectionAttrBlock  
+      //:CREATE ENTITY mSPLDefBlock.LLD_SpecialSectionAttrBlock 
       RESULT = CreateEntity( mSPLDefBlock, "LLD_SpecialSectionAttrBlock", zPOS_AFTER );
+      //:ELSE
+   } 
+   else
+   { 
+      //:TraceLineS( "CheckAddKeyordEntry located: ", szKeywordName )
+      TraceLineS( "CheckAddKeyordEntry located: ", szKeywordName );
    } 
 
-   //:END 
+   //:END
    return( 0 );
 //    
 // END
@@ -17568,8 +17411,8 @@ omSPLDef_SetUpKeywordEntries( View     mSPLDefBlock,
             omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Title" );
             //:CheckAddKeywordEntry( mSPLDefBlock, "Text" )
             omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Text" );
-            //:CheckAddKeywordEntry( mSPLDefBlock, "DIRECTIONS Header" )
-            omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "DIRECTIONS Header" );
+            //:CheckAddKeywordEntry( mSPLDefBlock, "Header" )
+            omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Header" );
             //:ELSE
          } 
          else
@@ -17584,8 +17427,8 @@ omSPLDef_SetUpKeywordEntries( View     mSPLDefBlock,
                omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Text" );
                //:CheckAddKeywordEntry( mSPLDefBlock, "Column List" )
                omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Column List" );
-               //:CheckAddKeywordEntry( mSPLDefBlock, "MARKETING Header" )
-               omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "MARKETING Header" );
+               //:CheckAddKeywordEntry( mSPLDefBlock, "Header" )
+               omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Header" );
                //:ELSE
             } 
             else
@@ -17598,8 +17441,8 @@ omSPLDef_SetUpKeywordEntries( View     mSPLDefBlock,
                   omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Title" );
                   //:CheckAddKeywordEntry( mSPLDefBlock, "Text" )
                   omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Text" );
-                  //:CheckAddKeywordEntry( mSPLDefBlock, "FIRST AID Header" )
-                  omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "FIRST AID Header" );
+                  //:CheckAddKeywordEntry( mSPLDefBlock, "Header" )
+                  omSPLDef_CheckAddKeywordEntry( mSPLDefBlock, "Header" );
                   //:ELSE
                } 
                else
