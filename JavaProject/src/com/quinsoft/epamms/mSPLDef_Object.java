@@ -10506,13 +10506,13 @@ omSPLDef_BuildSPLD_FromSLC( View     NewSPLD,
    } 
 
    //:END
-   //:FOR EACH NewSPLD.SPLD_Usage 
-   RESULT = SetCursorFirstEntity( NewSPLD, "SPLD_Usage", "" );
+   //:FOR EACH NewSPLD.SPLD_UsageType 
+   RESULT = SetCursorFirstEntity( NewSPLD, "SPLD_UsageType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
    { 
-      //:DELETE ENTITY NewSPLD.SPLD_Usage NONE 
-      RESULT = DeleteEntity( NewSPLD, "SPLD_Usage", zREPOS_NONE );
-      RESULT = SetCursorNextEntity( NewSPLD, "SPLD_Usage", "" );
+      //:DELETE ENTITY NewSPLD.SPLD_UsageType NONE 
+      RESULT = DeleteEntity( NewSPLD, "SPLD_UsageType", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( NewSPLD, "SPLD_UsageType", "" );
    } 
 
    //:END
@@ -10828,19 +10828,20 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
    String   szTempString_2 = null;
    String   szTempString_3 = null;
    String   szTempString_4 = null;
+   String   szTempString_5 = null;
    int      lTempInteger_4 = 0;
    int      lTempInteger_5 = 0;
-   String   szTempString_5 = null;
    String   szTempString_6 = null;
    String   szTempString_7 = null;
-   int      lTempInteger_6 = 0;
    String   szTempString_8 = null;
-   int      lTempInteger_7 = 0;
+   int      lTempInteger_6 = 0;
    String   szTempString_9 = null;
-   int      lTempInteger_8 = 0;
+   int      lTempInteger_7 = 0;
    String   szTempString_10 = null;
-   int      lTempInteger_9 = 0;
+   int      lTempInteger_8 = 0;
    String   szTempString_11 = null;
+   int      lTempInteger_9 = 0;
+   String   szTempString_12 = null;
    int      lTempInteger_10 = 0;
 
 
@@ -11364,7 +11365,7 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
             SetAttributeFromAttribute( mSPLDef, "CompositeComponentList", "Value", mSPLDef, "SPLD_DirectionsUsage", "Name" );
             //:mSPLDef.CompositeComponentList.DisplayValue      = mSPLDef.SPLD_DirectionsUsage.Name 
             SetAttributeFromAttribute( mSPLDef, "CompositeComponentList", "DisplayValue", mSPLDef, "SPLD_DirectionsUsage", "Name" );
-            //:SET CURSOR FIRST mSPLDef.SPLD_Usage WHERE mSPLDef.SPLD_Usage.UsageType            = mSPLDef.SPLD_DirectionsUsage.UsageType 
+            //:SET CURSOR FIRST mSPLDef.SPLD_Usage WHERE mSPLDef.SPLD_Usage.UsageType        = mSPLDef.SPLD_DirectionsUsage.UsageType 
             //:                                  AND mSPLDef.SPLD_Usage.ClaimsClassification = mSPLDef.SPLD_DirectionsUsage.ClaimsClassification 
             //:                                  AND mSPLDef.SPLD_Usage.Name                 = mSPLDef.SPLD_DirectionsUsage.Name 
             RESULT = SetCursorFirstEntity( mSPLDef, "SPLD_Usage", "" );
@@ -11421,6 +11422,17 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
       SetAttributeFromString( mSPLDef, "CompositeComponentList", "DisplayType", "Marketing" );
       //:mSPLDef.CompositeComponentList.OriginalTypeID     = mSPLDef.SPLD_MarketingSection.ID 
       SetAttributeFromAttribute( mSPLDef, "CompositeComponentList", "OriginalTypeID", mSPLDef, "SPLD_MarketingSection", "ID" );
+      //:mSPLDef.CompositeComponentList.Name               = mSPLDef.SPLD_MarketingSection.Name
+      SetAttributeFromAttribute( mSPLDef, "CompositeComponentList", "Name", mSPLDef, "SPLD_MarketingSection", "Name" );
+      //:TraceLineS( "SPLD BuildCompositeEntries Name: ", mSPLDef.SPLD_MarketingSection.Name )
+      {StringBuilder sb_szTempString_3;
+      if ( szTempString_3 == null )
+         sb_szTempString_3 = new StringBuilder( 32 );
+      else
+         sb_szTempString_3 = new StringBuilder( szTempString_3 );
+             GetStringFromAttribute( sb_szTempString_3, mSPLDef, "SPLD_MarketingSection", "Name" );
+      szTempString_3 = sb_szTempString_3.toString( );}
+      TraceLineS( "SPLD BuildCompositeEntries Name: ", szTempString_3 );
       //:IF mSPLDef.SPLD_MarketingSection.Title != ""
       if ( CompareAttributeToString( mSPLDef, "SPLD_MarketingSection", "Title", "" ) != 0 )
       { 
@@ -11435,37 +11447,37 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
          { 
             //:mSPLDef.CompositeComponentList.DisplayValue = mSPLDef.SPLD_MarketingSection.Name + " - " +
             //:                                             mSPLDef.SPLD_MarketingSection.Title 
-            {StringBuilder sb_szTempString_3;
-            if ( szTempString_3 == null )
-               sb_szTempString_3 = new StringBuilder( 32 );
-            else
-               sb_szTempString_3 = new StringBuilder( szTempString_3 );
-                         GetStringFromAttribute( sb_szTempString_3, mSPLDef, "SPLD_MarketingSection", "Name" );
-            szTempString_3 = sb_szTempString_3.toString( );}
-             {StringBuilder sb_szTempString_3;
-            if ( szTempString_3 == null )
-               sb_szTempString_3 = new StringBuilder( 32 );
-            else
-               sb_szTempString_3 = new StringBuilder( szTempString_3 );
-                        ZeidonStringConcat( sb_szTempString_3, 1, 0, " - ", 1, 0, 32001 );
-            szTempString_3 = sb_szTempString_3.toString( );}
-            {MutableInt mi_lTempInteger_4 = new MutableInt( lTempInteger_4 );
-            StringBuilder sb_szTempString_4;
+            {StringBuilder sb_szTempString_4;
             if ( szTempString_4 == null )
                sb_szTempString_4 = new StringBuilder( 32 );
             else
                sb_szTempString_4 = new StringBuilder( szTempString_4 );
-                         GetVariableFromAttribute( sb_szTempString_4, mi_lTempInteger_4, 'S', 255, mSPLDef, "SPLD_MarketingSection", "Title", "", 0 );
-            lTempInteger_4 = mi_lTempInteger_4.intValue( );
+                         GetStringFromAttribute( sb_szTempString_4, mSPLDef, "SPLD_MarketingSection", "Name" );
             szTempString_4 = sb_szTempString_4.toString( );}
-             {StringBuilder sb_szTempString_3;
-            if ( szTempString_3 == null )
-               sb_szTempString_3 = new StringBuilder( 32 );
+             {StringBuilder sb_szTempString_4;
+            if ( szTempString_4 == null )
+               sb_szTempString_4 = new StringBuilder( 32 );
             else
-               sb_szTempString_3 = new StringBuilder( szTempString_3 );
-                        ZeidonStringConcat( sb_szTempString_3, 1, 0, szTempString_4, 1, 0, 32001 );
-            szTempString_3 = sb_szTempString_3.toString( );}
-            SetAttributeFromString( mSPLDef, "CompositeComponentList", "DisplayValue", szTempString_3 );
+               sb_szTempString_4 = new StringBuilder( szTempString_4 );
+                        ZeidonStringConcat( sb_szTempString_4, 1, 0, " - ", 1, 0, 32001 );
+            szTempString_4 = sb_szTempString_4.toString( );}
+            {MutableInt mi_lTempInteger_4 = new MutableInt( lTempInteger_4 );
+            StringBuilder sb_szTempString_5;
+            if ( szTempString_5 == null )
+               sb_szTempString_5 = new StringBuilder( 32 );
+            else
+               sb_szTempString_5 = new StringBuilder( szTempString_5 );
+                         GetVariableFromAttribute( sb_szTempString_5, mi_lTempInteger_4, 'S', 255, mSPLDef, "SPLD_MarketingSection", "Title", "", 0 );
+            lTempInteger_4 = mi_lTempInteger_4.intValue( );
+            szTempString_5 = sb_szTempString_5.toString( );}
+             {StringBuilder sb_szTempString_4;
+            if ( szTempString_4 == null )
+               sb_szTempString_4 = new StringBuilder( 32 );
+            else
+               sb_szTempString_4 = new StringBuilder( szTempString_4 );
+                        ZeidonStringConcat( sb_szTempString_4, 1, 0, szTempString_5, 1, 0, 32001 );
+            szTempString_4 = sb_szTempString_4.toString( );}
+            SetAttributeFromString( mSPLDef, "CompositeComponentList", "DisplayValue", szTempString_4 );
          } 
 
          //:END
@@ -11619,21 +11631,21 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
          //:mSPLDef.CompositeComponentList.DisplayType       = "MarketingUsage"
          SetAttributeFromString( mSPLDef, "CompositeComponentList", "DisplayType", "MarketingUsage" );
          //:mSPLDef.CompositeComponentList.DisplayTypeIndent = "...Mktg " + szUsageType
-          {StringBuilder sb_szTempString_5;
-         if ( szTempString_5 == null )
-            sb_szTempString_5 = new StringBuilder( 32 );
+          {StringBuilder sb_szTempString_6;
+         if ( szTempString_6 == null )
+            sb_szTempString_6 = new StringBuilder( 32 );
          else
-            sb_szTempString_5 = new StringBuilder( szTempString_5 );
-                  ZeidonStringCopy( sb_szTempString_5, 1, 0, "...Mktg ", 1, 0, 255 );
-         szTempString_5 = sb_szTempString_5.toString( );}
-          {StringBuilder sb_szTempString_5;
-         if ( szTempString_5 == null )
-            sb_szTempString_5 = new StringBuilder( 32 );
+            sb_szTempString_6 = new StringBuilder( szTempString_6 );
+                  ZeidonStringCopy( sb_szTempString_6, 1, 0, "...Mktg ", 1, 0, 255 );
+         szTempString_6 = sb_szTempString_6.toString( );}
+          {StringBuilder sb_szTempString_6;
+         if ( szTempString_6 == null )
+            sb_szTempString_6 = new StringBuilder( 32 );
          else
-            sb_szTempString_5 = new StringBuilder( szTempString_5 );
-                  ZeidonStringConcat( sb_szTempString_5, 1, 0, szUsageType, 1, 0, 255 );
-         szTempString_5 = sb_szTempString_5.toString( );}
-         SetAttributeFromString( mSPLDef, "CompositeComponentList", "DisplayTypeIndent", szTempString_5 );
+            sb_szTempString_6 = new StringBuilder( szTempString_6 );
+                  ZeidonStringConcat( sb_szTempString_6, 1, 0, szUsageType, 1, 0, 255 );
+         szTempString_6 = sb_szTempString_6.toString( );}
+         SetAttributeFromString( mSPLDef, "CompositeComponentList", "DisplayTypeIndent", szTempString_6 );
          //:mSPLDef.CompositeComponentList.Value             = mSPLDef.SPLD_MarketingUsage.Name 
          SetAttributeFromAttribute( mSPLDef, "CompositeComponentList", "Value", mSPLDef, "SPLD_MarketingUsage", "Name" );
          //:mSPLDef.CompositeComponentList.DisplayValue      = mSPLDef.SPLD_MarketingUsage.Name 
@@ -11663,14 +11675,14 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
          else
          { 
             //:TraceLineS( "#### Invalid Usage ID ", mSPLDef.SPLD_MarketingUsage.Name )
-            {StringBuilder sb_szTempString_6;
-            if ( szTempString_6 == null )
-               sb_szTempString_6 = new StringBuilder( 32 );
+            {StringBuilder sb_szTempString_7;
+            if ( szTempString_7 == null )
+               sb_szTempString_7 = new StringBuilder( 32 );
             else
-               sb_szTempString_6 = new StringBuilder( szTempString_6 );
-                         GetStringFromAttribute( sb_szTempString_6, mSPLDef, "SPLD_MarketingUsage", "Name" );
-            szTempString_6 = sb_szTempString_6.toString( );}
-            TraceLineS( "#### Invalid Usage ID ", szTempString_6 );
+               sb_szTempString_7 = new StringBuilder( szTempString_7 );
+                         GetStringFromAttribute( sb_szTempString_7, mSPLDef, "SPLD_MarketingUsage", "Name" );
+            szTempString_7 = sb_szTempString_7.toString( );}
+            TraceLineS( "#### Invalid Usage ID ", szTempString_7 );
          } 
 
          RESULT = SetCursorNextEntity( mSPLDef, "SPLD_MarketingUsageOrdering", "" );
@@ -11730,14 +11742,14 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
    SetAttributeFromString( mSPLDef, "CompositeComponentList", "DisplayTypeIndent", "Location" );
    //:szCompositeLocation = "..." + mSPLDef.SPLD_HumanHazardSection.PanelLoc1 
    {MutableInt mi_lTempInteger_6 = new MutableInt( lTempInteger_6 );
-   StringBuilder sb_szTempString_7;
-   if ( szTempString_7 == null )
-      sb_szTempString_7 = new StringBuilder( 32 );
+   StringBuilder sb_szTempString_8;
+   if ( szTempString_8 == null )
+      sb_szTempString_8 = new StringBuilder( 32 );
    else
-      sb_szTempString_7 = new StringBuilder( szTempString_7 );
-       GetVariableFromAttribute( sb_szTempString_7, mi_lTempInteger_6, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc1", "", 0 );
+      sb_szTempString_8 = new StringBuilder( szTempString_8 );
+       GetVariableFromAttribute( sb_szTempString_8, mi_lTempInteger_6, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc1", "", 0 );
    lTempInteger_6 = mi_lTempInteger_6.intValue( );
-   szTempString_7 = sb_szTempString_7.toString( );}
+   szTempString_8 = sb_szTempString_8.toString( );}
     {StringBuilder sb_szCompositeLocation;
    if ( szCompositeLocation == null )
       sb_szCompositeLocation = new StringBuilder( 32 );
@@ -11750,7 +11762,7 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
       sb_szCompositeLocation = new StringBuilder( 32 );
    else
       sb_szCompositeLocation = new StringBuilder( szCompositeLocation );
-      ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_7, 1, 0, 101 );
+      ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_8, 1, 0, 101 );
    szCompositeLocation = sb_szCompositeLocation.toString( );}
    //:IF mSPLDef.SPLD_HumanHazardSection.PanelLoc2 != ""
    if ( CompareAttributeToString( mSPLDef, "SPLD_HumanHazardSection", "PanelLoc2", "" ) != 0 )
@@ -11764,20 +11776,20 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
             ZeidonStringConcat( sb_szCompositeLocation, 1, 0, " / ", 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
       {MutableInt mi_lTempInteger_7 = new MutableInt( lTempInteger_7 );
-      StringBuilder sb_szTempString_8;
-      if ( szTempString_8 == null )
-         sb_szTempString_8 = new StringBuilder( 32 );
+      StringBuilder sb_szTempString_9;
+      if ( szTempString_9 == null )
+         sb_szTempString_9 = new StringBuilder( 32 );
       else
-         sb_szTempString_8 = new StringBuilder( szTempString_8 );
-             GetVariableFromAttribute( sb_szTempString_8, mi_lTempInteger_7, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc2", "", 0 );
+         sb_szTempString_9 = new StringBuilder( szTempString_9 );
+             GetVariableFromAttribute( sb_szTempString_9, mi_lTempInteger_7, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc2", "", 0 );
       lTempInteger_7 = mi_lTempInteger_7.intValue( );
-      szTempString_8 = sb_szTempString_8.toString( );}
+      szTempString_9 = sb_szTempString_9.toString( );}
        {StringBuilder sb_szCompositeLocation;
       if ( szCompositeLocation == null )
          sb_szCompositeLocation = new StringBuilder( 32 );
       else
          sb_szCompositeLocation = new StringBuilder( szCompositeLocation );
-            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_8, 1, 0, 101 );
+            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_9, 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
    } 
 
@@ -11794,20 +11806,20 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
             ZeidonStringConcat( sb_szCompositeLocation, 1, 0, " / ", 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
       {MutableInt mi_lTempInteger_8 = new MutableInt( lTempInteger_8 );
-      StringBuilder sb_szTempString_9;
-      if ( szTempString_9 == null )
-         sb_szTempString_9 = new StringBuilder( 32 );
+      StringBuilder sb_szTempString_10;
+      if ( szTempString_10 == null )
+         sb_szTempString_10 = new StringBuilder( 32 );
       else
-         sb_szTempString_9 = new StringBuilder( szTempString_9 );
-             GetVariableFromAttribute( sb_szTempString_9, mi_lTempInteger_8, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc3", "", 0 );
+         sb_szTempString_10 = new StringBuilder( szTempString_10 );
+             GetVariableFromAttribute( sb_szTempString_10, mi_lTempInteger_8, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc3", "", 0 );
       lTempInteger_8 = mi_lTempInteger_8.intValue( );
-      szTempString_9 = sb_szTempString_9.toString( );}
+      szTempString_10 = sb_szTempString_10.toString( );}
        {StringBuilder sb_szCompositeLocation;
       if ( szCompositeLocation == null )
          sb_szCompositeLocation = new StringBuilder( 32 );
       else
          sb_szCompositeLocation = new StringBuilder( szCompositeLocation );
-            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_9, 1, 0, 101 );
+            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_10, 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
    } 
 
@@ -11824,20 +11836,20 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
             ZeidonStringConcat( sb_szCompositeLocation, 1, 0, " / ", 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
       {MutableInt mi_lTempInteger_9 = new MutableInt( lTempInteger_9 );
-      StringBuilder sb_szTempString_10;
-      if ( szTempString_10 == null )
-         sb_szTempString_10 = new StringBuilder( 32 );
+      StringBuilder sb_szTempString_11;
+      if ( szTempString_11 == null )
+         sb_szTempString_11 = new StringBuilder( 32 );
       else
-         sb_szTempString_10 = new StringBuilder( szTempString_10 );
-             GetVariableFromAttribute( sb_szTempString_10, mi_lTempInteger_9, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc4", "", 0 );
+         sb_szTempString_11 = new StringBuilder( szTempString_11 );
+             GetVariableFromAttribute( sb_szTempString_11, mi_lTempInteger_9, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc4", "", 0 );
       lTempInteger_9 = mi_lTempInteger_9.intValue( );
-      szTempString_10 = sb_szTempString_10.toString( );}
+      szTempString_11 = sb_szTempString_11.toString( );}
        {StringBuilder sb_szCompositeLocation;
       if ( szCompositeLocation == null )
          sb_szCompositeLocation = new StringBuilder( 32 );
       else
          sb_szCompositeLocation = new StringBuilder( szCompositeLocation );
-            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_10, 1, 0, 101 );
+            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_11, 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
    } 
 
@@ -11854,20 +11866,20 @@ omSPLDef_BuildCompositeEntries( View     mSPLDef )
             ZeidonStringConcat( sb_szCompositeLocation, 1, 0, " / ", 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
       {MutableInt mi_lTempInteger_10 = new MutableInt( lTempInteger_10 );
-      StringBuilder sb_szTempString_11;
-      if ( szTempString_11 == null )
-         sb_szTempString_11 = new StringBuilder( 32 );
+      StringBuilder sb_szTempString_12;
+      if ( szTempString_12 == null )
+         sb_szTempString_12 = new StringBuilder( 32 );
       else
-         sb_szTempString_11 = new StringBuilder( szTempString_11 );
-             GetVariableFromAttribute( sb_szTempString_11, mi_lTempInteger_10, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc5", "", 0 );
+         sb_szTempString_12 = new StringBuilder( szTempString_12 );
+             GetVariableFromAttribute( sb_szTempString_12, mi_lTempInteger_10, 'S', 255, mSPLDef, "SPLD_HumanHazardSection", "PanelLoc5", "", 0 );
       lTempInteger_10 = mi_lTempInteger_10.intValue( );
-      szTempString_11 = sb_szTempString_11.toString( );}
+      szTempString_12 = sb_szTempString_12.toString( );}
        {StringBuilder sb_szCompositeLocation;
       if ( szCompositeLocation == null )
          sb_szCompositeLocation = new StringBuilder( 32 );
       else
          sb_szCompositeLocation = new StringBuilder( szCompositeLocation );
-            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_11, 1, 0, 101 );
+            ZeidonStringConcat( sb_szCompositeLocation, 1, 0, szTempString_12, 1, 0, 101 );
       szCompositeLocation = sb_szCompositeLocation.toString( );}
    } 
 
@@ -13092,7 +13104,7 @@ omSPLDef_DuplicateSPLD_Block( View     NewSPLD,
    //:DuplicateSPLD_Block( VIEW NewSPLD    BASED ON LOD mSPLDef,
    //:                  VIEW SourceSPLD BASED ON LOD mSPLDef )
 
-   //:// This is a recursive routine to dupplicate an LLD_Block / LLD_SubBlock.
+   //:// This is a recursive routine to duplicate an LLD_Block / LLD_SubBlock.
    //:CREATE ENTITY NewSPLD.LLD_Block  
    RESULT = CreateEntity( NewSPLD, "LLD_Block", zPOS_AFTER );
    //:SetMatchingAttributesByName( NewSPLD, "LLD_Block", SourceSPLD, "LLD_Block", zSET_NULL ) 
@@ -17647,29 +17659,41 @@ omSPLDef_BuildUsageEntriesFrSLC( View     mSPLDef,
    //:// Build the Usage, Directions for Use and Marketing subobject structures from the creating SourceSLC.
 
    //:// Delete current entries.
-   //:FOR EACH mSPLDef.SPLD_Usage 
-   RESULT = SetCursorFirstEntity( mSPLDef, "SPLD_Usage", "" );
+   //:FOR EACH mSPLDef.SPLD_UsageType 
+   RESULT = SetCursorFirstEntity( mSPLDef, "SPLD_UsageType", "" );
    while ( RESULT > zCURSOR_UNCHANGED )
    { 
-      //:DELETE ENTITY mSPLDef.SPLD_Usage NONE 
-      RESULT = DeleteEntity( mSPLDef, "SPLD_Usage", zREPOS_NONE );
-      RESULT = SetCursorNextEntity( mSPLDef, "SPLD_Usage", "" );
+      //:DELETE ENTITY mSPLDef.SPLD_UsageType NONE 
+      RESULT = DeleteEntity( mSPLDef, "SPLD_UsageType", zREPOS_NONE );
+      RESULT = SetCursorNextEntity( mSPLDef, "SPLD_UsageType", "" );
    } 
 
    //:END
 
    //:// Build Usage Entries (Surface, Application Type, Area of Use, Organism Claim)
-   //:FOR EACH SourceSLC.S_Usage WITHIN SourceSLC.SubregLabelContent 
-   RESULT = SetCursorFirstEntity( SourceSLC, "S_Usage", "SubregLabelContent" );
+   //:FOR EACH SourceSLC.S_UsageType WITHIN SourceSLC.SubregLabelContent 
+   RESULT = SetCursorFirstEntity( SourceSLC, "S_UsageType", "SubregLabelContent" );
    while ( RESULT > zCURSOR_UNCHANGED )
    { 
-      //:CREATE ENTITY mSPLDef.SPLD_Usage
-      RESULT = CreateEntity( mSPLDef, "SPLD_Usage", zPOS_AFTER );
-      //:SetMatchingAttributesByName( mSPLDef, "SPLD_Usage", SourceSLC, "S_Usage", zSET_NULL )
-      SetMatchingAttributesByName( mSPLDef, "SPLD_Usage", SourceSLC, "S_Usage", zSET_NULL );
-      //:INCLUDE mSPLDef.S_Usage FROM SourceSLC.S_Usage 
-      RESULT = IncludeSubobjectFromSubobject( mSPLDef, "S_Usage", SourceSLC, "S_Usage", zPOS_AFTER );
-      RESULT = SetCursorNextEntity( SourceSLC, "S_Usage", "SubregLabelContent" );
+      //:CREATE ENTITY mSPLDef.SPLD_UsageType
+      RESULT = CreateEntity( mSPLDef, "SPLD_UsageType", zPOS_AFTER );
+      //:SetMatchingAttributesByName( mSPLDef, "SPLD_UsageType", SourceSLC, "S_UsageType", zSET_NULL )
+      SetMatchingAttributesByName( mSPLDef, "SPLD_UsageType", SourceSLC, "S_UsageType", zSET_NULL );
+      //:FOR EACH SourceSLC.S_Usage WITHIN SourceSLC.SubregLabelContent 
+      RESULT = SetCursorFirstEntity( SourceSLC, "S_Usage", "SubregLabelContent" );
+      while ( RESULT > zCURSOR_UNCHANGED )
+      { 
+         //:CREATE ENTITY mSPLDef.SPLD_Usage
+         RESULT = CreateEntity( mSPLDef, "SPLD_Usage", zPOS_AFTER );
+         //:SetMatchingAttributesByName( mSPLDef, "SPLD_Usage", SourceSLC, "S_Usage", zSET_NULL )
+         SetMatchingAttributesByName( mSPLDef, "SPLD_Usage", SourceSLC, "S_Usage", zSET_NULL );
+         //:INCLUDE mSPLDef.S_Usage FROM SourceSLC.S_Usage 
+         RESULT = IncludeSubobjectFromSubobject( mSPLDef, "S_Usage", SourceSLC, "S_Usage", zPOS_AFTER );
+         RESULT = SetCursorNextEntity( SourceSLC, "S_Usage", "SubregLabelContent" );
+      } 
+
+      RESULT = SetCursorNextEntity( SourceSLC, "S_UsageType", "SubregLabelContent" );
+      //:END
    } 
 
    //:END
@@ -17963,6 +17987,69 @@ omSPLDef_SetUpKeywordEntries( View     mSPLDefBlock,
 //    
 // END
 } 
+
+
+//:DERIVED ATTRIBUTE OPERATION
+//:dColorName( VIEW mSPLDef BASED ON LOD mSPLDef,
+//:            STRING ( 32 ) InternalEntityStructure,
+//:            STRING ( 32 ) InternalAttribStructure,
+//:            SHORT GetOrSetFlag )
+
+//:   STRING ( 32 ) szName
+public int 
+omSPLDef_dColorName( View     mSPLDef,
+                     String InternalEntityStructure,
+                     String InternalAttribStructure,
+                     Integer   GetOrSetFlag )
+{
+   String   szName = null;
+
+
+   //:CASE GetOrSetFlag
+   switch( GetOrSetFlag )
+   { 
+      //:OF   zDERIVED_GET:
+      case zDERIVED_GET :
+
+         //:GetStringFromAttribute( szName, mSPLDef, InternalEntityStructure, "Pantone" )
+         {StringBuilder sb_szName;
+         if ( szName == null )
+            sb_szName = new StringBuilder( 32 );
+         else
+            sb_szName = new StringBuilder( szName );
+                   GetStringFromAttribute( sb_szName, mSPLDef, InternalEntityStructure, "Pantone" );
+         szName = sb_szName.toString( );}
+         //:IF szName = ""
+         if ( ZeidonStringCompare( szName, 1, 0, "", 1, 0, 33 ) == 0 )
+         { 
+            //:GetStringFromAttribute( szName, mSPLDef, InternalEntityStructure, "Name" )
+            {StringBuilder sb_szName;
+            if ( szName == null )
+               sb_szName = new StringBuilder( 32 );
+            else
+               sb_szName = new StringBuilder( szName );
+                         GetStringFromAttribute( sb_szName, mSPLDef, InternalEntityStructure, "Name" );
+            szName = sb_szName.toString( );}
+         } 
+
+         //:END
+         //:// Store the calculated value in the object.
+         //:StoreStringInRecord( mSPLDef, InternalEntityStructure, InternalAttribStructure, szName )
+         StoreStringInRecord( mSPLDef, InternalEntityStructure, InternalAttribStructure, szName );
+         //:RETURN 0
+         if(8==8)return( 0 );
+
+         //:/* end zDERIVED_GET */
+         //:OF   zDERIVED_SET:
+         case zDERIVED_SET :
+            break ;
+      } 
+
+
+      //:  /* end zDERIVED_SET */
+      //:END  /* case */
+      return( 0 );
+   } 
 
 
 
