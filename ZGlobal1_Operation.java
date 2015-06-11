@@ -4583,7 +4583,6 @@ public class ZGlobal1_Operation extends VmlOperation
    //
    //  PURPOSE: Convert several lines of string data into separate entity instances.
    //
-   //
    ////////////////////////////////////////////////////////////////////////////////////////////////////
    /*
    private String trimEnd( String raw ) {
