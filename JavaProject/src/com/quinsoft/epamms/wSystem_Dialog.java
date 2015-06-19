@@ -4570,5 +4570,46 @@ DeleteBlankFeedback( View     ViewToWindow )
 } 
 
 
+//:DIALOG OPERATION
+//:SaveHelpMessage( VIEW ViewToWindow )
+
+//:   VIEW sHelp REGISTERED AS sHelp
+public int 
+SaveHelpMessage( View     ViewToWindow )
+{
+   zVIEW    sHelp = new zVIEW( );
+   int      RESULT = 0;
+
+   RESULT = GetViewByName( sHelp, "sHelp", ViewToWindow, zLEVEL_TASK );
+   //:COMMIT sHelp
+   RESULT = CommitObjectInstance( sHelp );
+   return( 0 );
+// END
+} 
+
+
+//:DIALOG OPERATION
+//:ExitHelp( VIEW ViewToWindow )
+
+//:// VIEW wWebXfer BASED ON LOD wWebXfer
+//:   VIEW sHelp REGISTERED AS sHelp
+public int 
+ExitHelp( View     ViewToWindow )
+{
+   zVIEW    sHelp = new zVIEW( );
+   int      RESULT = 0;
+
+   RESULT = GetViewByName( sHelp, "sHelp", ViewToWindow, zLEVEL_TASK );
+
+   //:// GetViewByName( wWebXfer, "wWebXferHelp", ViewToWindow, zLEVEL_TASK )
+   //:// SetAttributeFromString( wWebXfer, "Root", "HelpDialogWindow", "" )
+   //:// DropNameForView( wWebXfer, "wWebXferHelp", 0, zLEVEL_TASK )
+   //:DropView( sHelp )
+   DropView( sHelp );
+   return( 0 );
+// END
+} 
+
+
 
 }
