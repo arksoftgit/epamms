@@ -93,6 +93,7 @@ END
 /////////////////////////////////////////////////////////////////////////////
 DIALOG OPERATION
 InitListSubregProducts( VIEW ViewToWindow )
+
    VIEW mLLD_LST BASED ON LOD  mLLD
 
    SetDynamicBannerName( ViewToWindow, "wSPLD", "SubregistrantProduct" )
