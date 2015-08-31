@@ -3379,12 +3379,12 @@ o_fnGenerateSPLD_Label( View     ViewToWindow,
    //:RemoveInvalidCharsFromFilename( szApplication )
    {
     ZGlobal1_Operation m_ZGlobal1_Operation = new ZGlobal1_Operation( ViewToWindow );
-     {StringBuilder sb_szApplication;
+    {StringBuilder sb_szApplication;
    if ( szApplication == null )
       sb_szApplication = new StringBuilder( 32 );
    else
       sb_szApplication = new StringBuilder( szApplication );
-      m_ZGlobal1_Operation.RemoveInvalidCharsFromFilename( sb_szApplication );
+       m_ZGlobal1_Operation.RemoveInvalidCharsFromFilename( sb_szApplication );
    szApplication = sb_szApplication.toString( );}
     // m_ZGlobal1_Operation = null;  // permit gc  (unnecessary)
    }
@@ -3469,12 +3469,12 @@ o_fnGenerateSPLD_Label( View     ViewToWindow,
    //:RemoveInvalidCharsFromFilename( szLabelName )
    {
     ZGlobal1_Operation m_ZGlobal1_Operation = new ZGlobal1_Operation( ViewToWindow );
-     {StringBuilder sb_szLabelName;
+    {StringBuilder sb_szLabelName;
    if ( szLabelName == null )
       sb_szLabelName = new StringBuilder( 32 );
    else
       sb_szLabelName = new StringBuilder( szLabelName );
-      m_ZGlobal1_Operation.RemoveInvalidCharsFromFilename( sb_szLabelName );
+       m_ZGlobal1_Operation.RemoveInvalidCharsFromFilename( sb_szLabelName );
    szLabelName = sb_szLabelName.toString( );}
     // m_ZGlobal1_Operation = null;  // permit gc  (unnecessary)
    }

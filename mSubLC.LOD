@@ -1,4 +1,4 @@
-z1000-Zeidon    MSUBLC   TZZOLODO 07/16/15   11:50:50 1.0a2    
+z1000-Zeidon    MSUBLC   TZZOLODO 08/30/15   19:41:02 1.0a2    
 eLOD       1
 aZKey      69035258
 aName      mSubLC
@@ -485,7 +485,6 @@ aUpdate    Y
 eER_AttributeRec 6
 aName      ChemicalFamily
 aZKey      1942093
-aNotNull   Y
 aDesc      Chemical Family (e.g. Pesticide, Quat Disinfectant, Iodine Disinfectant)
 
 eDomainRec 7
@@ -504,7 +503,6 @@ eER_AttributeRec 6
 aName      Number
 aZKey      69031557
 aLth       5
-aNotNull   Y
 aDesc      1-5 digit number assigned to the product (e.g. 141 for Mason MAQUAT 256-NHQ or 129 for Lonza HWS-256)
 aCaseSens  Y
 
@@ -8093,7 +8091,7 @@ eER_RelLink 3
 eER_RelType 4
 
 eLOD_Entity 2
-awkSelectedAttributeForDragSort 18
+awkSelectedAttributeForDragSort 20
 
 eLOD_Attribute 3
 awkSequence 1
